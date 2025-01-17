@@ -1,2 +1,2 @@
 include:
-  - component: $CI_SERVER_FQDN/somanydoors/ci-cd-components/docker/build-image@0.0.10
+  - component: $CI_SERVER_FQDN/somanydoors/ci-cd-components/docker/build-image@0.0.11
