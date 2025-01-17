@@ -24,6 +24,7 @@ h1 {
 .flexbox-columns {
     display:  flex;
     flex-flow: column wrap;
+    gap: 15px;
 }
 
 #main-content {
