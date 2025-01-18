@@ -1,4 +1,8 @@
 /* All pages */
+html {
+    font-size: 1.5em;
+}
+
 body {
     background: black;
     color: rgb(154, 226, 72);
@@ -23,6 +27,16 @@ hr {
   border-top: 1px solid rgb(57, 20, 116);
 }
 
+button {
+    color: rgb(168, 177, 243);
+    background: rgb(57, 20, 116);
+    border-radius: 15px;
+    font-size: inherit;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+}
+
 .flexbox-container {
     display: flex;
     justify-content: space-between;
@@ -39,6 +53,10 @@ hr {
 #main-content {
     margin: 0 0 0 15px;
     flex: 1 0 0;
+}
+
+#main-content > :first-child {
+  margin-top: 0;
 }
 
 /* Books */
@@ -63,24 +81,29 @@ hr {
 
 /* Navbar */
 #navbar {
-    width: 150px;
-    border: 1px double rgb(57, 20, 116);
-    border-radius: 15px;
+    display:  flex;
+    flex-flow: column wrap;
+    gap: 20px;
+    justify-content: flex-start;
 }
 
-@media (max-width: 250px) {
+@media (max-width: 350px) {
     #navbar {
         width: unset;
         flex-basis: 100%;
+        flex: 1;
     }
 }
 
-#navbar ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 5px;
+#navbar a {
+    text-decoration: none;
 }
 
-#navbar li {
-    margin: 20px 0;
+.navbar-link button {
+    padding: 5px 20px;
+}
+
+.navbar-link button:hover {
+    color: rgb(57, 20, 116);
+    background: rgb(168, 177, 243);
 }

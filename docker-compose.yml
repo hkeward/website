@@ -1,6 +1,6 @@
 services:
   site:
-    image: registry.somanydoors.ca/heather/heatherward-dev:${CI_COMMIT_SHORT_SHA}
+    image: registry.somanydoors.ca/heather/heatherward-dev:${CI_COMMIT_SHORT_SHA:-main}
     restart: unless-stopped
     networks:
       - proxy

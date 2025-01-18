@@ -11,7 +11,6 @@ Run `make local` to start the nginx server with src files mounted. The website w
 - Add a footer; put the GitHub link there
     - Probably use an icon for this instead of an image
 - Scale the text better
-- Make navbar links prettier
 
 ## Colours
 
