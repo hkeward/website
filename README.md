@@ -12,8 +12,6 @@ Run `make local` to start the nginx server with src files mounted. The website w
     - Probably use an icon for this instead of an image
 - Scale the text better
 - Make navbar links prettier
-- Make a favicon.ico
-- Bring compose file into this repo so that build -> deploy happens
 
 ## Colours
 
