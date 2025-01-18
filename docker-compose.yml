@@ -1,0 +1,16 @@
+services:
+  site:
+    image: registry.somanydoors.ca/heather/heatherward-dev:${CI_COMMIT_SHORT_SHA}
+    restart: unless-stopped
+    networks:
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.heatherwarddev.rule=Host(`heatherward.dev`)"
+      - "traefik.http.routers.heatherwarddev.entrypoints=https"
+      - "traefik.http.routers.heatherwarddev.tls.certresolver=cloudflaredns"
+      - "traefik.http.services.heatherwarddev.loadbalancer.passhostheader=true"
+      - "traefik.http.services.heatherwarddev.loadbalancer.server.port=80"
+networks:
+  proxy:
+    external: true

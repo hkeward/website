@@ -1,2 +1,19 @@
+stages:
+  - build
+  - deploy
+
+variables:
+  # The compose project is what the namespace of the docker-compose containers will be
+  # ${COMPOSE_PROJECT_NAME}-<service-name>-1
+  COMPOSE_PROJECT_NAME: heatherwarddev
+
 include:
-  - component: $CI_SERVER_FQDN/somanydoors/ci-cd-components/docker/build-image@0.0.10
+  - component: $CI_SERVER_FQDN/somanydoors/ci-cd-components/docker/build-image@0.0.11
+    inputs:
+      stage: build
+      custom-tag: $CI_COMMIT_SHORT_SHA
+  - component: $CI_SERVER_FQDN/somanydoors/ci-cd-components/docker/deploy-compose@0.0.11
+    inputs:
+      stage: deploy
+      compose-file: docker-compose.yml
+      compose-project: $COMPOSE_PROJECT_NAME
