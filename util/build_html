@@ -11,7 +11,7 @@ def directory(value):
     return value.rstrip("/")
 
 
-def inject_components(template_file, components, target_file):
+def inject_components(template_file, components, target_file, script_src_files):
     """
     Inject components into template files and write them to the build directory
 
@@ -19,6 +19,7 @@ def inject_components(template_file, components, target_file):
         template_file (str): Path to the template file
         components ({component_name: component_file}): Mapping between target components and their corresponding HTML files
         target_file (str): Path to write the resulting HTML file to
+        script_src_files ([str]): Path to all .js files (relative to the nginx root); these will be added as <script> tags to all html files
     """
     with open(template_file, "r") as f:
         template_content = f.read()
@@ -34,6 +35,12 @@ def inject_components(template_file, components, target_file):
                 id=component_name
             )
             template_component_div.replace_with(component_div)
+
+    # Add scripts
+    template_body = template_soup.find("body")
+    for script_src_file in script_src_files:
+        script_tag = template_soup.new_tag("script", src=script_src_file)
+        template_body.append(script_tag)
 
     with open(target_file, "w") as f:
         f.write(template_soup.prettify())
@@ -59,23 +66,30 @@ def main(args):
                 else:
                     components[component_name] = component_file
             else:
+                relpath = os.path.join(
+                    source_dir.replace(args.src_directory, ""), fname
+                )
+
                 files.append(
                     {
                         "source_file": os.path.join(source_dir, fname),
                         "target_file": os.path.join(
-                            args.build_directory,
-                            source_dir.replace(args.src_directory, "").lstrip("/"),
-                            fname,
+                            args.build_directory, relpath.lstrip("/")
                         ),
+                        "relpath": relpath,
                     }
                 )
+
+    script_src_files = [
+        file["relpath"] for file in files if file["target_file"].endswith(".js")
+    ]
 
     for file in files:
         source_file = file["source_file"]
         target_file = file["target_file"]
         os.makedirs(os.path.dirname(target_file), exist_ok=True)
         if source_file.endswith(".html"):
-            inject_components(source_file, components, target_file)
+            inject_components(source_file, components, target_file, script_src_files)
         else:
             shutil.copy(source_file, target_file)
 
