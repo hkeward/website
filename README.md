@@ -19,7 +19,6 @@ Since components are injected during build, we can't directly mount the src dire
 make clean
 
 # Rebuild files in the build directory
-# Runs `clean` first
 make build
 
 # Build the docker image; wil be tagged to the latest git short hash
