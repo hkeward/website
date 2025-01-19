@@ -11,7 +11,7 @@ docker-build:
 	docker build --rm -t $(IMAGE_TAG) .
 
 local: build docker-build
-	docker run --rm -it --network host -v $$PWD/build:/usr/share/nginx/html -v $$PWD/src/css:/usr/share/nginx/html/css $(IMAGE_TAG)
+	docker run --rm -it --network host -v $$PWD/build:/usr/share/nginx/html $(IMAGE_TAG)
 
 docker-push: docker-build
 	docker push $(IMAGE_TAG)
