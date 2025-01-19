@@ -35,6 +35,13 @@ button {
     display: block;
     width: 100%;
     cursor: pointer;
+    border: none;
+    padding: 5px 20px;
+}
+
+button:hover {
+    color: rgb(57, 20, 116);
+    background: rgb(168, 177, 243);
 }
 
 .flexbox-container {
@@ -108,11 +115,7 @@ button {
     text-decoration: none;
 }
 
-.navbar-link button {
-    padding: 5px 20px;
-}
-
-.navbar-link button:hover {
+.current-page button {
     color: rgb(57, 20, 116);
     background: rgb(168, 177, 243);
 }
