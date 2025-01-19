@@ -2,9 +2,37 @@
 
 A sandbox for Heather's personal projects.
 
+## Components
+
+Components that are reused between pages can be stored in [src/html/components](src/html/components). Files should end in `.html` and contain a single top-level div in their body. The ID of this `div` should match the basename of the component (e.g. the ID for navbar.html would be `navbar`). If the ID of any element in an HTML file outside of the components directory is set to that same ID, that element will be replaced by the corresponding component at build time.
+
 ## Local dev
 
-Run `make local` to start the nginx server with src files mounted. The website will be accessible at localhost. You should be able to update the files and reload the page to view edits without restarting the image.
+Run `make local` to start the nginx server with built files mounted. The website will be accessible at localhost.
+
+Since components are injected during build, we can't directly mount the src directory to the local image; instead, the `make local` step first runs `make build` to build the HTML files, and the `build` directory is mounted. To have fresh changes reflected at localhost, you must therefore run `make build` again to get changes pulled in to the `build` directory (you can run this in another terminal while the local image is running). The only exception is [the styles.css file](src/css/styles.css), which is mounted directly from src; changes to styles will be reflected simply by reloading the page.
+
+## Make commmands
+
+```bash
+# Remove the build directory
+make clean
+
+# Rebuild files in the build directory
+# Runs `clean` first
+make build
+
+# Build the docker image; wil be tagged to the latest git short hash
+make docker-build
+
+# Build and run the website locally
+# Runs `build` and `docker-build` first
+make local
+
+# Push the image to the container registry
+# Runs `docker-build` first
+make docker-push
+```
 
 ## Colours
 

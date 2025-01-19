@@ -1,0 +1,113 @@
+#!/usr/bin/env python3
+
+from argparse import ArgumentParser
+from bs4 import BeautifulSoup
+import os
+import shutil
+
+
+def directory(value):
+    # strip trailing slash from directories
+    return value.rstrip("/")
+
+
+def inject_components(template_file, components, target_file):
+    """
+    Inject components into template files and write them to the build directory
+
+    Args:
+        template_file (str): Path to the template file
+        components ({component_name: component_file}): Mapping between target components and their corresponding HTML files
+        target_file (str): Path to write the resulting HTML file to
+    """
+    with open(template_file, "r") as f:
+        template_content = f.read()
+    template_soup = BeautifulSoup(template_content, "html.parser")
+
+    # If a component is found in the template, load it and replace the target div with it
+    for component_name, component_file in components.items():
+        template_component_div = template_soup.find(id=component_name)
+        if template_component_div:
+            with open(component_file, "r") as f:
+                component_content = f.read()
+            component_div = BeautifulSoup(component_content, "html.parser").body.find(
+                id=component_name
+            )
+            template_component_div.replace_with(component_div)
+
+    with open(target_file, "w") as f:
+        f.write(template_soup.prettify())
+
+
+def main(args):
+    # component_name: component_file
+    components = {}
+    # [{source_file: source_file, target_file: target_file}]
+    files = []
+    for source_dir, _, filenames in os.walk(args.src_directory):
+        for fname in filenames:
+            # html files in the components directory are added to components; otherwise, they're copied over as normal
+            if source_dir.startswith(args.components_directory) and fname.endswith(
+                ".html"
+            ):
+                component_name = fname.replace(".html", "")
+                component_file = os.path.join(source_dir, fname)
+                if component_name in components:
+                    raise SystemExit(
+                        f"Detected two components with the same name at different paths:\n\t{component_file}\n\t{components['component_name']}\nPlease rename one of these components."
+                    )
+                else:
+                    components[component_name] = component_file
+            else:
+                files.append(
+                    {
+                        "source_file": os.path.join(source_dir, fname),
+                        "target_file": os.path.join(
+                            args.build_directory,
+                            source_dir.replace(args.src_directory, "").lstrip("/"),
+                            fname,
+                        ),
+                    }
+                )
+
+    for file in files:
+        source_file = file["source_file"]
+        target_file = file["target_file"]
+        os.makedirs(os.path.dirname(target_file), exist_ok=True)
+        if source_file.endswith(".html"):
+            inject_components(source_file, components, target_file)
+        else:
+            shutil.copy(source_file, target_file)
+
+
+if __name__ == "__main__":
+    parser = ArgumentParser(
+        description="Inject components into template HTML files, and copy other assets to the build directory"
+    )
+
+    parser.add_argument(
+        "-s",
+        "--src-directory",
+        type=directory,
+        help="Source directory to search for template HTML files to build",
+        required=True,
+    )
+
+    parser.add_argument(
+        "-c",
+        "--components-directory",
+        type=directory,
+        help="Directory of components to use to insert into the HTML template files",
+        required=True,
+    )
+
+    parser.add_argument(
+        "-b",
+        "--build-directory",
+        type=directory,
+        help="Directory to write built HTML to; will mirror the structure found in the --src-directory",
+        required=True,
+    )
+
+    args = parser.parse_args()
+    main(args)
