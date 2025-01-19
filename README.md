@@ -2,11 +2,9 @@
 
 A sandbox for Heather's personal projects.
 
-## Components
+# Development
 
-Components that are reused between pages can be stored in [src/html/components](src/html/components). Files should end in `.html` and contain a single top-level div in their body. The ID of this `div` should match the basename of the component (e.g. the ID for navbar.html would be `navbar`). If the ID of any element in an HTML file outside of the components directory is set to that same ID, that element will be replaced by the corresponding component at build time.
-
-## Local dev
+## Local dev / deployment
 
 Run `make local` to start the nginx server with built files mounted. The website will be accessible at localhost.
 
@@ -26,7 +24,7 @@ To have the build happen automatically on save rather than needing to run it in 
     }
 ```
 
-## Make commmands
+### Make commmands
 
 ```bash
 # Remove the build directory
@@ -46,6 +44,29 @@ make local
 # Runs `docker-build` first
 make docker-push
 ```
+
+## Components
+
+Components that are reused between pages can be stored in [src/html/components](src/html/components). Files should end in `.html` and contain a single top-level div in their body. 
+
+To use a component, set the ID of a div in an HTML file outside of the components directory to the basename of the component file (e.g. `src/html/components/navbar.html` would be selected by `id="navbar"`); that element will be replaced by the corresponding component at build time.
+
+## Adding a page / route
+
+1. Create the page somewhere in src/; must end in `.html`
+2. Add a link to the page in [the navbar](src/html/components/navbar.html). The href value will be what shows up in the navbar, and should start with a `/`. This is the `<href_value>`  used in step 3.
+3. Add a route to the page you set in the navbar in [the nginx conf file](ehatherward.dev.conf) in the format:
+
+```ini
+    location <href_value> {
+        rewrite ^<href_value>$ <path_to_html_file> break;
+    }
+```
+
+Where:
+
+- `<href_value>` is the path you set the href to in the navbar; for example, `/projects`
+- `<path_to_html_file>` is the path to the HTML file to be loaded at that page, relative to the nginx root; for `src/html/pages/projects.html` for example this would be `/html/pages/projects.html`
 
 ## Colours
 

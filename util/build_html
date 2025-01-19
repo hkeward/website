@@ -2,6 +2,7 @@
 
 from argparse import ArgumentParser
 from bs4 import BeautifulSoup
+from bs4.element import Tag
 import os
 import shutil
 
@@ -31,10 +32,19 @@ def inject_components(template_file, components, target_file, script_src_files):
         if template_component_div:
             with open(component_file, "r") as f:
                 component_content = f.read()
-            component_div = BeautifulSoup(component_content, "html.parser").body.find(
-                id=component_name
+            component_soup = BeautifulSoup(component_content, "html.parser")
+            component_top_level_divs = component_soup.body.find_all(
+                "div", recursive=False
             )
-            template_component_div.replace_with(component_div)
+            if len(component_top_level_divs) > 1 or len(component_top_level_divs) == 0:
+                raise SystemExit(
+                    f"Expected a single top-level div for component {component_name} ({component_file})"
+                )
+            else:
+                template_component_div.clear()
+                for child in component_top_level_divs[0].children:
+                    if isinstance(child, Tag):
+                        template_component_div.append(child)
 
     # Add scripts
     template_body = template_soup.find("body")
