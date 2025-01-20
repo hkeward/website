@@ -1,0 +1,14 @@
+body {
+  background-image: url("/assets/images/grid.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-transition: background-image 5s;
+  transition: background-image 5s;
+}
+
+.hidden {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
