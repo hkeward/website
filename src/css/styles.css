@@ -13,8 +13,16 @@ a {
     color: rgb(112, 47, 218);
 }
 
-h1, h2, h3, h4 {
+h1, h2 {
     color: rgb(97, 197, 151);
+}
+
+h3 {
+    color: rgb(75, 89, 193);
+}
+
+h4 {
+    color: rgb(104, 116, 204);
 }
 
 h1 {
@@ -86,12 +94,10 @@ button:hover {
 
 .book-card h3 {
     margin: 15px 0 10px 0;
-    color: rgb(75, 89, 193);
 }
 
 .book-card h4 {
     margin: 0;
-    color: rgb(104, 116, 204);
 }
 
 
