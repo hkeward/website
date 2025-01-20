@@ -48,9 +48,10 @@ def inject_components(template_file, components, target_file, script_src_files):
 
     # Add scripts
     template_body = template_soup.find("body")
-    for script_src_file in script_src_files:
-        script_tag = template_soup.new_tag("script", src=script_src_file)
-        template_body.append(script_tag)
+    for script_src_file, targets in script_src_files.items():
+        if os.path.basename(template_file) in targets:
+            script_tag = template_soup.new_tag("script", src=script_src_file)
+            template_body.append(script_tag)
 
     with open(target_file, "w") as f:
         f.write(template_soup.prettify())
@@ -90,9 +91,35 @@ def main(args):
                     }
                 )
 
-    script_src_files = [
-        file["relpath"] for file in files if file["target_file"].endswith(".js")
+    html_files = [
+        os.path.basename(file["source_file"])
+        for file in files
+        if file["source_file"].endswith(".html")
     ]
+    # {src_file_relpath: [html_page_targets]}
+    script_src_files = {}
+    for file in files:
+        file_relpath = file["relpath"]
+        if file["source_file"].endswith(".js"):
+            with open(file["source_file"], "r") as f:
+                first_line = f.readline().strip()
+            if first_line.startswith("// targets"):
+                targets = first_line.split(" ")[2:]
+                if len(targets) == 0:
+                    raise SystemExit(
+                        f"// targets comment found but no targets selected for file {file['source_file']}\nRemove \\ targets comment to target JS file to all HTML files"
+                    )
+            else:
+                targets = html_files
+
+            print(file_relpath)
+            print(targets)
+            if file_relpath in script_src_files:
+                raise SystemExit(
+                    f"Detected two scripts with the same name but different paths: {file_relpath}"
+                )
+            else:
+                script_src_files[file_relpath] = targets
 
     for file in files:
         source_file = file["source_file"]

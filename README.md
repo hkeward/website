@@ -26,7 +26,7 @@ To have the build happen automatically on save rather than needing to run it in 
 
 ### Make commmands
 
-```bash
+```makefile
 # Remove the build directory
 make clean
 
@@ -67,6 +67,16 @@ Where:
 
 - `<href_value>` is the path you set the href to in the navbar; for example, `/projects`
 - `<path_to_html_file>` is the path to the HTML file to be loaded at that page, relative to the nginx root; for `src/html/pages/projects.html` for example this would be `/html/pages/projects.html`
+
+## Scripts
+
+Anything ending in `.js` will be automatitically added to all HTML pages (outside of the components directory). To instead specifically target a script to a subset of files, add the following comment at the top of the file:
+
+```js
+// targets index.html books.html
+```
+
+The relative path is not needed, only the HTML file basename will be checked.
 
 ## Colours
 
