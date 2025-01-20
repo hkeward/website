@@ -14,10 +14,10 @@ function onYouTubeIframeAPIReady() {
 }
 
 const clickableArea = {
-  x1: 350,
-  y1: 350,
-  x2: 450,
-  y2: 450,
+  x1: 100,
+  y1: 400,
+  x2: 300,
+  y2: 600,
 };
 
 function onPlayerReady() {
@@ -33,7 +33,6 @@ function onPlayerReady() {
       clickY >= clickableArea.y1 &&
       clickY <= clickableArea.y2
     ) {
-      console.log("HIT");
       document.body.style.backgroundImage = 'url("/assets/images/grid.sun.png")';
       player.playVideo();
     };
