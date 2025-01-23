@@ -33,8 +33,21 @@ function onPlayerReady() {
       clickY >= clickableArea.y1 &&
       clickY <= clickableArea.y2
     ) {
-      document.body.style.backgroundImage = 'url("/assets/images/grid.sun.png")';
       player.playVideo();
+      setTimeout(function () {
+        document.body.style.backgroundImage = 'url("/assets/images/grid.sun.png")';
+        setTimeout(function () {
+          var header = document.getElementById("page-header");
+          header.style.color = "rgb(241, 26, 79)";
+          header.style.fontFamily = "monospace";
+        }, 3500);
+        setTimeout(function () {
+          const IGotIn = document.createElement("div");
+          IGotIn.classList.add("slide-in-text");
+          IGotIn.textContent = "I GOT IN"
+          document.body.appendChild(IGotIn);
+        }, 355);
+      }, 10000);
     };
-  });
+  }, { once: true });
 };
