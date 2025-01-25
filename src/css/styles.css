@@ -132,6 +132,17 @@ button:hover {
     background: rgb(168, 177, 243);
 }
 
+.navbar-tarot {
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: row wrap;
+}
+
+.navbar-tarot svg {
+    width: 24px;
+    height: 24px;
+}
+
 /* Tarot */
 .tarot-suit {
     display: flex;
