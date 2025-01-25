@@ -13,7 +13,8 @@ a {
     color: rgb(112, 47, 218);
 }
 
-h1, h2 {
+h1,
+h2 {
     color: rgb(97, 197, 151);
 }
 
@@ -31,8 +32,8 @@ h1 {
 }
 
 hr {
-  border: 0;
-  border-top: 1px solid rgb(57, 20, 116);
+    border: 0;
+    border-top: 1px solid rgb(57, 20, 116);
 }
 
 button {
@@ -60,7 +61,7 @@ button:hover {
 }
 
 .flexbox-columns {
-    display:  flex;
+    display: flex;
     flex-flow: column wrap;
     gap: 15px;
 }
@@ -70,8 +71,8 @@ button:hover {
     flex: 1 0 0;
 }
 
-#main-content > :first-child {
-  margin-top: 0;
+#main-content> :first-child {
+    margin-top: 0;
 }
 
 .full-page {
@@ -81,6 +82,11 @@ button:hover {
 #footer {
     margin-top: auto;
     align-self: flex-end;
+}
+
+.icon {
+    width: 36px;
+    height: 36px;
 }
 
 /* Books */
@@ -103,7 +109,7 @@ button:hover {
 
 /* Navbar */
 #navbar {
-    display:  flex;
+    display: flex;
     flex-flow: column wrap;
     gap: 20px;
     justify-content: flex-start;
@@ -124,4 +130,15 @@ button:hover {
 .current-page button {
     color: rgb(57, 20, 116);
     background: rgb(168, 177, 243);
+}
+
+/* Tarot */
+.tarot-suit {
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: row wrap;
+    gap: 15px;
+    align-items: center;
+    color: inherit;
+    text-decoration: none;
 }
