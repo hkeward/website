@@ -25,14 +25,18 @@ function onPlayerReady() {
     const clickX = event.pageX;
     const clickY = event.pageY;
 
-    console.log(clickX);
-    console.log(clickY);
+    console.log(clickX, clickY);
     if (
       clickX >= clickableArea.x1 &&
       clickX <= clickableArea.x2 &&
       clickY >= clickableArea.y1 &&
       clickY <= clickableArea.y2
     ) {
+      const inLeft = document.createElement("div");
+      inLeft.classList.add("slide-in-text");
+      inLeft.textContent = "I GOT IN";
+      document.body.appendChild(inLeft);
+
       player.playVideo();
       setTimeout(function () {
         document.body.style.backgroundImage = 'url("/assets/images/grid.sun.png")';
@@ -42,11 +46,11 @@ function onPlayerReady() {
           header.style.fontFamily = "monospace";
         }, 3500);
         setTimeout(function () {
-          const IGotIn = document.createElement("div");
-          IGotIn.classList.add("slide-in-text");
-          IGotIn.textContent = "I GOT IN"
-          document.body.appendChild(IGotIn);
-        }, 355);
+          const inLeft = document.createElement("div");
+          inLeft.classList.add("slide-in-text");
+          inLeft.textContent = "I GOT IN";
+          document.body.appendChild(inLeft);
+        }, 35500);
       }, 10000);
     };
   }, { once: true });
