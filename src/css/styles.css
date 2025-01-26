@@ -36,6 +36,11 @@ hr {
     border-top: 1px solid rgb(57, 20, 116);
 }
 
+ul {
+    list-style: none;
+    padding: 0;
+}
+
 button {
     color: rgb(168, 177, 243);
     background: rgb(57, 20, 116);
@@ -87,6 +92,8 @@ button:hover {
 .icon {
     width: 36px;
     height: 36px;
+    stroke: rgb(104, 116, 204);
+    fill: none;
 }
 
 /* Books */
@@ -130,6 +137,10 @@ button:hover {
 .current-page button {
     color: rgb(57, 20, 116);
     background: rgb(168, 177, 243);
+}
+
+.current-page svg {
+    stroke: rgb(97, 197, 151);
 }
 
 .navbar-tarot {

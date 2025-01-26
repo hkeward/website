@@ -51,6 +51,25 @@ Components that are reused between pages can be stored in [src/html/components](
 
 To use a component, set the ID of a div in an HTML file outside of the components directory to the basename of the component file (e.g. `src/html/components/navbar.html` would be selected by `id="navbar"`); that element will be replaced by the corresponding component at build time.
 
+## Icons
+
+To use an icon:
+
+1. Create an SVG file in [src/assets/icons](src/assets/icons) named `{icon_name}.svg`.
+2. Add an svg tag in your HTML and select the icon you want by setting the class to `icon-{icon_name}`:
+
+```html
+<svg class="icon-swords"></svg>
+```
+
+The svg's contents will be inserted during build.
+
+Some things to note:
+
+- The classes of the element to be replaced will be preserved
+- If the `icon` class does not exist on the element, it will be added
+- Other attributes of the element will _not_ be preserved when the icon's content replaces it
+
 ## Adding a page / route
 
 1. Create the page somewhere in src/; must end in `.html`
@@ -86,3 +105,4 @@ The relative path is not needed, only the HTML file basename will be checked.
 - rgb(112, 47, 218)
 - rgb(75, 89, 193)
 - rgb(104, 116, 204)
+- rgb(250, 197, 52)
