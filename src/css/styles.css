@@ -192,4 +192,14 @@ button:hover {
 
 .card-large {
     max-height: 400px;
+    -webkit-transition: all 0.7s;
+    transition: all 0.7s;
+}
+
+.card-reversed {
+    transform: rotate(180deg);
+}
+
+.reversed {
+    display: none;
 }
