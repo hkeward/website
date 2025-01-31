@@ -10,7 +10,10 @@
 
 <body>
   <div class="flexbox-columns full-page">
-    <h1><svg class="icon icon-major-arcana"></svg>Major Arcana</h1>
+    <div class="page-title">
+      <svg class="icon icon-major-arcana"></svg>
+      <h1>Major Arcana</h1>
+    </div>
     <div class="flexbox-container">
       <div id="navbar"></div>
       <div id="main-content">
@@ -86,10 +89,10 @@
       </div>
     </div>
 
-    <div>
+    <div class="flexbox-columns" style="row-gap: 50px">
 
-      <div class="flexbox-columns tarot-card">
-        <h2 id="the-fool">The Fool</h2>
+      <div id="the-fool" class="flexbox-columns tarot-card">
+        <h2>The Fool</h2>
         <div class="flexbox-container flex-start">
           <svg class="icon-air"></svg>
           <div class="tarot-keywords upright">
@@ -106,6 +109,28 @@
           </div>
           <div class="tarot-description reversed">
             You're doomed bro
+          </div>
+        </div>
+      </div>
+
+      <div id="the-magician" class="flexbox-columns tarot-card">
+        <h2>The Magician</h2>
+        <div class="flexbox-container flex-start">
+          <svg class="icon-air"></svg>
+          <div class="tarot-keywords upright">
+            Power; Adroitness; Construction; Create Change
+          </div>
+          <div class="tarot-keywords reversed">
+            Destruction; Bane; Untapped Potential
+          </div>
+        </div>
+        <div class="flexbox-container flex-start">
+          <img src="/assets/images/tarot/major_arcana/the_magician.png" alt="The Magician" class="card-large">
+          <div class="tarot-description upright">
+            He's got all the elements there, very powerful.
+          </div>
+          <div class="tarot-description reversed">
+            Now he's coming for you
           </div>
         </div>
       </div>
