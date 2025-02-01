@@ -5,7 +5,11 @@ clean:
 	rm -rf build
 
 build:
-	./util/build_html --src-directory $$PWD/src --components-directory $$PWD/src/html/components --build-directory $$PWD/build
+	./util/build_html \
+		--src-directory $$PWD/src \
+		--components-directory $$PWD/src/html/components \
+		--icons-directory $$PWD/src/assets/icons \
+		--build-directory $$PWD/build
 
 docker-build:
 	docker build --rm -t $(IMAGE_TAG) .
