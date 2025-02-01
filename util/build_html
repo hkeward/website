@@ -3,8 +3,17 @@
 from argparse import ArgumentParser
 from bs4 import BeautifulSoup
 from bs4.element import Tag
+from bs4 import warnings, XMLParsedAsHTMLWarning
 import os
 import shutil
+import re
+import copy
+
+
+warnings.filterwarnings("ignore", category=XMLParsedAsHTMLWarning)
+
+icon_class_regex = re.compile(r"icon-(.*)")
+style_elements_to_remove = ["fill", "stroke"]
 
 
 def directory(value):
@@ -12,7 +21,48 @@ def directory(value):
     return value.rstrip("/")
 
 
-def inject_components(template_file, components, target_file, script_src_files):
+def clean_svg(svg_file):
+    """
+    Load and clean an svg file, returning the contents
+
+    Args:
+        svg_file (str): Path to the svg file to clean
+
+    Returns:
+        svg_content (bs4.element.Tag): Parsed contents of the SVG file
+    """
+    with open(svg_file, "r") as f:
+        svg_content = BeautifulSoup(f, "lxml").find("svg")
+
+    for element in ["id", "height", "width"]:
+        if element in svg_content.attrs:
+            del svg_content.attrs[element]
+    svg_content["viewbox"] = "0 0 24 24"
+
+    if "xmlns:svg" in svg_content.attrs:
+        del svg_content.attrs["xmlns:svg"]
+
+    for defs_element in svg_content.find_all("defs"):
+        defs_element.decompose()
+
+    # remove styles on the element so I can use css
+    for element in svg_content.find_all(True):
+        if "id" in element.attrs:
+            del element.attrs["id"]
+        if element.name == "path" and "style" in element.attrs:
+            filtered_style = [
+                s
+                for s in element["style"].split(";")
+                if not any(
+                    s.startswith(f"{prefix}:") for prefix in style_elements_to_remove
+                )
+            ]
+            element["style"] = ";".join(filtered_style)
+
+    return svg_content
+
+
+def inject_components(template_file, components, target_file, script_src_files, icons):
     """
     Inject components into template files and write them to the build directory
 
@@ -21,6 +71,7 @@ def inject_components(template_file, components, target_file, script_src_files):
         components ({component_name: component_file}): Mapping between target components and their corresponding HTML files
         target_file (str): Path to write the resulting HTML file to
         script_src_files ([str]): Path to all .js files (relative to the nginx root); these will be added as <script> tags to all html files
+        icons ({icon_name: icon_contents}): SVG icons to inject
     """
     with open(template_file, "r") as f:
         template_content = f.read()
@@ -53,6 +104,34 @@ def inject_components(template_file, components, target_file, script_src_files):
             script_tag = template_soup.new_tag("script", src=script_src_file)
             template_body.append(script_tag)
 
+    # Add icons
+    if len(icons) != 0:
+        template_icon_elements = template_soup.body.find_all(class_=icon_class_regex)
+        for el in template_icon_elements:
+            class_list = el.get("class", [])
+            if "icon" not in class_list:
+                class_list.append("icon")
+            matching_classes = [
+                match.group(1)
+                for c in class_list
+                if (match := icon_class_regex.search(c))
+            ]
+            if len(matching_classes) != 1:
+                raise SystemExit(
+                    f"Expected exactly one icon class (icon-) prefix, got:\n{matching_classes}"
+                )
+            else:
+                icon_name = matching_classes[0]
+
+            if icon_name not in icons:
+                raise SystemExit(
+                    f"Icon {icon_name} not found in icons directory (is it named {icon_name}.svg? -/_ do not matter in naming.)"
+                )
+            else:
+                icon_content = copy.deepcopy(icons[icon_name])
+                icon_content["class"] = class_list
+                el.replace_with(icon_content)
+
     with open(target_file, "w") as f:
         f.write(template_soup.prettify())
 
@@ -60,6 +139,8 @@ def inject_components(template_file, components, target_file, script_src_files):
 def main(args):
     # component_name: component_file
     components = {}
+    # icon_name: icon_contents (bs4.element.Tag)
+    icons = {}
     # [{source_file: source_file, target_file: target_file}]
     files = []
     for source_dir, _, filenames in os.walk(args.src_directory):
@@ -76,6 +157,19 @@ def main(args):
                     )
                 else:
                     components[component_name] = component_file
+            # icons
+            elif (
+                args.icons_directory is not None
+                and source_dir.startswith(args.icons_directory)
+                and fname.endswith(".svg")
+            ):
+                icon_name = fname.replace(".svg", "").replace("_", "-")
+                if icon_name not in icons:
+                    icon_file = os.path.join(source_dir, fname)
+                    icon_content = clean_svg(icon_file)
+                    icons[icon_name] = icon_content
+                else:
+                    raise SystemExit(f"Duplicate icon name {icon_name} found")
             else:
                 relpath = os.path.join(
                     source_dir.replace(args.src_directory, ""), fname
@@ -96,6 +190,7 @@ def main(args):
         for file in files
         if file["source_file"].endswith(".html")
     ]
+
     # {src_file_relpath: [html_page_targets]}
     script_src_files = {}
     for file in files:
@@ -112,8 +207,6 @@ def main(args):
             else:
                 targets = html_files
 
-            print(file_relpath)
-            print(targets)
             if file_relpath in script_src_files:
                 raise SystemExit(
                     f"Detected two scripts with the same name but different paths: {file_relpath}"
@@ -126,7 +219,9 @@ def main(args):
         target_file = file["target_file"]
         os.makedirs(os.path.dirname(target_file), exist_ok=True)
         if source_file.endswith(".html"):
-            inject_components(source_file, components, target_file, script_src_files)
+            inject_components(
+                source_file, components, target_file, script_src_files, icons
+            )
         else:
             shutil.copy(source_file, target_file)
 
@@ -150,6 +245,14 @@ if __name__ == "__main__":
         type=directory,
         help="Directory of components to use to insert into the HTML template files",
         required=True,
+    )
+
+    parser.add_argument(
+        "-i",
+        "--icons-directory",
+        type=directory,
+        help="Directory containing icons in SVG format",
+        required=False,
     )
 
     parser.add_argument(

@@ -13,7 +13,8 @@ a {
     color: rgb(112, 47, 218);
 }
 
-h1, h2 {
+h1,
+h2 {
     color: rgb(97, 197, 151);
 }
 
@@ -31,8 +32,13 @@ h1 {
 }
 
 hr {
-  border: 0;
-  border-top: 1px solid rgb(57, 20, 116);
+    border: 0;
+    border-top: 1px solid rgb(57, 20, 116);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
 }
 
 button {
@@ -52,6 +58,14 @@ button:hover {
     background: rgb(168, 177, 243);
 }
 
+.page-title {
+    display: flex;
+    flex-flow: row-wrap;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
 .flexbox-container {
     display: flex;
     justify-content: space-between;
@@ -60,9 +74,13 @@ button:hover {
 }
 
 .flexbox-columns {
-    display:  flex;
+    display: flex;
     flex-flow: column wrap;
     gap: 15px;
+}
+
+.flex-start {
+    justify-content: flex-start;
 }
 
 #main-content {
@@ -70,8 +88,8 @@ button:hover {
     flex: 1 0 0;
 }
 
-#main-content > :first-child {
-  margin-top: 0;
+#main-content> :first-child {
+    margin-top: 0;
 }
 
 .full-page {
@@ -81,6 +99,13 @@ button:hover {
 #footer {
     margin-top: auto;
     align-self: flex-end;
+}
+
+.icon {
+    width: 36px;
+    height: 36px;
+    stroke: rgb(104, 116, 204);
+    fill: none;
 }
 
 /* Books */
@@ -103,7 +128,7 @@ button:hover {
 
 /* Navbar */
 #navbar {
-    display:  flex;
+    display: flex;
     flex-flow: column wrap;
     gap: 20px;
     justify-content: flex-start;
@@ -124,4 +149,71 @@ button:hover {
 .current-page button {
     color: rgb(57, 20, 116);
     background: rgb(168, 177, 243);
+}
+
+.current-page svg {
+    stroke: rgb(97, 197, 151);
+}
+
+.navbar-tarot {
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: row wrap;
+}
+
+.navbar-tarot svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Tarot main page */
+.tarot-suit {
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: row wrap;
+    gap: 15px;
+    align-items: center;
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Tarot suit pages */
+.tarot-card h2 {
+    margin: 0;
+    font-family: monospace;
+    color: black;
+    background: rgb(75, 89, 193);
+    border-radius: 25px;
+    padding: 0 0 0 15px;
+}
+
+.tarot-keywords {
+    font-style: italic;
+    font-size: 0.9em;
+    align-self: center;
+}
+
+.tarot-description {
+    border: 3px double rgb(75, 89, 193);
+    border-radius: 15px;
+    padding: 10px;
+    flex: 1;
+}
+
+.card-small {
+    max-height: 230px;
+}
+
+.card-large {
+    max-height: 400px;
+    -webkit-transition: all 0.7s;
+    transition: all 0.7s;
+}
+
+.card-reversed {
+    transform: rotate(180deg);
+}
+
+.reversed {
+    display: none;
 }
