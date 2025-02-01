@@ -32,10 +32,6 @@ function onPlayerReady() {
       clickY >= clickableArea.y1 &&
       clickY <= clickableArea.y2
     ) {
-      const inLeft = document.createElement("div");
-      inLeft.classList.add("slide-in-text");
-      inLeft.textContent = "I GOT IN";
-      document.body.appendChild(inLeft);
 
       player.playVideo();
       setTimeout(function () {
