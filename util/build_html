@@ -8,6 +8,7 @@ import os
 import shutil
 import re
 import copy
+import json
 
 
 warnings.filterwarnings("ignore", category=XMLParsedAsHTMLWarning)
@@ -62,7 +63,55 @@ def clean_svg(svg_file):
     return svg_content
 
 
-def inject_components(template_file, components, target_file, script_src_files, icons):
+def inject_tarot_data(component, card, card_data):
+    """
+    Inject tarot data into the tarot component
+
+    Args:
+        component (bs4.element.Tag): Tarot component to have data injected into
+        card (str): Card identifier
+        card_data (dict): Data associated with the given card
+
+    Returns:
+        (bs4.element.Tag): Tarot component with data injected
+    """
+    component["id"] = card
+
+    for key, value in card_data.items():
+        if key == "elements":
+            # we'll handle elements separately
+            continue
+        else:
+            replacement = "; ".join(value) if isinstance(value, list) else str(value)
+
+        # replace in contents
+        for element in component.find_all(
+            string=lambda text: text and f"{{{{ {key} }}}}" in text
+        ):
+            element.replace_with(element.replace(f"{{{{ {key} }}}}", replacement))
+
+        # replace in tags
+        for tag in component.find_all(True):
+            for attr, attr_value in tag.attrs.items():
+                if isinstance(attr_value, str) and f"{{{{ {key} }}}}" in attr_value:
+                    tag[attr] = attr_value.replace(f"{{{{ {key} }}}}", replacement)
+
+    # ensure there's an icon for each element
+    for tag in component.find_all("svg"):
+        if "class" in tag.attrs and "{{ elements }}" in " ".join(tag["class"]):
+            for element in card_data["elements"]:
+                new_svg = copy.copy(tag)
+                new_svg["class"] = [f"icon-{element}"]
+                tag.insert_before(new_svg)
+            # Remove the original template <svg>
+            tag.decompose()
+
+    return component
+
+
+def inject_components(
+    template_file, components, target_file, script_src_files, icons, tarot_data
+):
     """
     Inject components into template files and write them to the build directory
 
@@ -72,6 +121,7 @@ def inject_components(template_file, components, target_file, script_src_files, 
         target_file (str): Path to write the resulting HTML file to
         script_src_files ([str]): Path to all .js files (relative to the nginx root); these will be added as <script> tags to all html files
         icons ({icon_name: icon_contents}): SVG icons to inject
+        tarot_data ({card: card_data}): Dict of tarot card data; used to populate tarot components
     """
     with open(template_file, "r") as f:
         template_content = f.read()
@@ -79,8 +129,8 @@ def inject_components(template_file, components, target_file, script_src_files, 
 
     # If a component is found in the template, load it and replace the target div with it
     for component_name, component_file in components.items():
-        template_component_div = template_soup.find(id=component_name)
-        if template_component_div:
+        template_component_divs = template_soup.find_all(id=component_name)
+        for template_component_div in template_component_divs:
             with open(component_file, "r") as f:
                 component_content = f.read()
             component_soup = BeautifulSoup(component_content, "html.parser")
@@ -92,10 +142,31 @@ def inject_components(template_file, components, target_file, script_src_files, 
                     f"Expected a single top-level div for component {component_name} ({component_file})"
                 )
             else:
-                template_component_div.clear()
-                for child in component_top_level_divs[0].children:
-                    if isinstance(child, Tag):
-                        template_component_div.append(child)
+                component_top_level_div = component_top_level_divs[0]
+
+                if component_name == "tarot-card":
+                    classes = template_component_div.get("class", [])
+                    if len(classes) != 1:
+                        raise SystemExit(
+                            f"Expected exactly one class on the tarot-card selector; got {classes}\nOffending file was {template_file}"
+                        )
+                    else:
+                        card = classes[0]
+                        if card not in tarot_data:
+                            raise SystemExit(
+                                f"Tarot card {card} not found in tarot data"
+                            )
+
+                        card_component = inject_tarot_data(
+                            component_top_level_div, card, tarot_data[card]
+                        )
+                        template_component_div.replace_with(card_component)
+                else:
+                    template_component_div.clear()
+
+                    for child in component_top_level_div.children:
+                        if isinstance(child, Tag):
+                            template_component_div.append(child)
 
     # Add scripts
     template_body = template_soup.find("body")
@@ -139,10 +210,16 @@ def inject_components(template_file, components, target_file, script_src_files, 
 def main(args):
     # component_name: component_file
     components = {}
+
     # icon_name: icon_contents (bs4.element.Tag)
     icons = {}
+
     # [{source_file: source_file, target_file: target_file}]
     files = []
+
+    # {card_name: name, suit, elements, img, keywords, keywords_reversed, desription, description_reversed}
+    tarot_data = {}
+
     for source_dir, _, filenames in os.walk(args.src_directory):
         for fname in filenames:
             # html files in the components directory are added to components; otherwise, they're copied over as normal
@@ -170,6 +247,9 @@ def main(args):
                     icons[icon_name] = icon_content
                 else:
                     raise SystemExit(f"Duplicate icon name {icon_name} found")
+            elif fname == "tarot.json":
+                with open(os.path.join(source_dir, fname), "r") as f:
+                    tarot_data = json.load(f)
             else:
                 relpath = os.path.join(
                     source_dir.replace(args.src_directory, ""), fname
@@ -220,7 +300,12 @@ def main(args):
         os.makedirs(os.path.dirname(target_file), exist_ok=True)
         if source_file.endswith(".html"):
             inject_components(
-                source_file, components, target_file, script_src_files, icons
+                source_file,
+                components,
+                target_file,
+                script_src_files,
+                icons,
+                tarot_data,
             )
         else:
             shutil.copy(source_file, target_file)

@@ -1,0 +1,32 @@
+{
+  "the-fool": {
+    "card_name": "The Fool",
+    "suit": "Major Arcana",
+    "elements": ["air"],
+    "img": "/assets/images/tarot/major_arcana/the_fool.png",
+    "keywords": ["Beginnings", "Innocence", "Clear conscience"],
+    "keywords_reversed": ["Vanity", "Foolishness", "Indiscretion", "Inanity"],
+    "description": "Well dressed but naive, the fool represents innocence and the start of life's journey.",
+    "description_reversed": "You're doomed bro"
+  },
+  "the-magician": {
+    "card_name": "The Magician",
+    "suit": "Major Arcana",
+    "elements": ["earth", "air"],
+    "img": "/assets/images/tarot/major_arcana/the_magician.png",
+    "keywords": ["Power", "Adroitness", "Construction", "Create change"],
+    "keywords_reversed": ["Destruction", "Bane", "Untapped potential"],
+    "description": "He's got all the elements there, very powerful.",
+    "description_reversed": "Now he's coming for you"
+  },
+  "the-high-priestess": {
+    "card_name": "The High Priestess",
+    "suit": "Major Arcana",
+    "elements": ["water"],
+    "img": "/assets/images/tarot/major_arcana/the_high_priestess.png",
+    "keywords": ["Intuition", "Clairvoyance", "Premonition", "Perceptivity"],
+    "keywords_reversed": ["Deceit", "Duplicity", "Hypocrisy", "Secrets"],
+    "description": "The High Priestess is a card about spirituality and the divine unconscious.",
+    "description_reversed": "Quit lying probably"
+  }
+}
