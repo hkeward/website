@@ -36,11 +36,6 @@ hr {
     border-top: 1px solid rgb(57, 20, 116);
 }
 
-ul {
-    list-style: none;
-    padding: 0;
-}
-
 button {
     color: rgb(168, 177, 243);
     background: rgb(57, 20, 116);
@@ -113,20 +108,41 @@ button:hover {
 }
 
 /* Books */
+.book-link {
+    all: unset;
+    cursor: pointer;
+}
+
 .book-card {
     border: 1px double rgb(57, 20, 116);
     border-radius: 15px;
     flex: 1;
-    padding: 0 15px;
-    min-width: 150px;
+    padding: 15px;
+    min-width: fit-content;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    gap: 15px;
 }
 
 .book-card h3 {
-    margin: 15px 0 10px 0;
+    margin: 0;
 }
 
 .book-card h4 {
     margin: 0;
+}
+
+.rating {
+    display: flex;
+    align-items: flex-end;
+}
+
+.quote {
+    margin-left: 15px;
+    border-left: 2px solid rgb(75, 89, 193);
+    padding-left: 25px;
+    font-style: italic;
 }
 
 
