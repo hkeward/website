@@ -81,12 +81,7 @@ window.addEventListener("load", () => {
   ];
 
   imagesToPreload.forEach(src => {
-    fetch(src, { cache: "force-cache" })
-      .then(response => response.blob())
-      .then(blob => {
-        const img = new Image();
-        img.src = URL.createObjectURL(blob);
-      })
-      .catch(err => console.error("Preloading failed", err));
+    const img = new Image();
+    img.src = src;
   });
 });
