@@ -122,7 +122,7 @@ For example, to select The Magician, insert this element into a page:
 <div id="tarot-card" class="the-magician"></div>
 ```
 
-The data from `the-magician` in `tarot.json` will be injected into the `tarot-card.html` component, and that component will be added in place of that div. The ID will be set to the class (so you won't end up with many divs with the same ID in the final built HTML -- unless you select the same card several times).
+The data from `the-magician` in `tarot.json` will be injected into the `tarot-card.html` component, and that component will be added in place of that div. The ID will be set to the class (so you won't end up with many divs with the same ID in the final built HTML -- unless you select the same card several times). The description and description_reversed fields can contain HTML.
 
 ## Steps to add a tarot card to your page
 

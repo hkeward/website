@@ -28,5 +28,27 @@
     "keywords_reversed": ["Deceit", "Duplicity", "Hypocrisy", "Secrets"],
     "description": "The High Priestess is a card about spirituality and the divine unconscious.",
     "description_reversed": "Quit lying probably"
+  },
+  "judgement": {
+    "card_name": "Judgement",
+    "suit": "Major Arcana",
+    "elements": ["fire", "water"],
+    "img": "/assets/images/tarot/major_arcana/judgement.png",
+    "symbolism": {"flag on the trumpet": "The Greek cross - crux imissa quadrata"},
+    "keywords": ["Awakening", "Epiphany", "Spiritual realization", "Rebirth"],
+    "keywords_reversed": ["Misinterpretation", "Misreckoning"],
+    "description": "Spiritual awakening; epiphany. Current events in the Seeker's life will lead to an important realization. <br><br>Could refer to a literal judgement; all of the evidence has been made available to the Seeker, and the Seeker has rendered judgement; that judgement will lead to a personal awakening / realization for the Seeker. Upright, Judgement implies that the decision was correct, and this will lead to a fulfilling spiritual epiphany. <br><br>The people rising from their coffins are transitioning between phases -- an awakening, a shift in understanding towards enlightnment. The dominance of water implies that this is a spiritual or divine understanding.",
+    "description_reversed": "The evidence presented to the Seeker has been misinterpreted, and they have come to the wrong conclusion on an important decision. They may feel they are lacking fulfillment because they understand at a subconscious level that their choice was the wrong one. <br><br>Could also denote a lack of spirituality that may have had a part to play in the Seeker not being prepared to come to the correct conclusion in the matter at hand. Spirituality has not been a focus for the Seeker; the Seeker must look inwards; they have all the information, and know what the correct choice would be, but they need the strength to make it.<br><br>There is a feeling of regression, and of dishonesty with oneself."
+  },
+  "seven-of-swords": {
+    "card_name": "Seven of Swords",
+    "suit": "Swords",
+    "elements": [],
+    "img": "/assets/images/tarot/swords/seven_of_swords.png",
+    "symbolism": {"guy carrying way too many swords": "James"},
+    "keywords": ["Impulsiveness", "Spontaneity", "Evasion", "Trust issues"],
+    "keywords_reversed": ["Reparation", "Forfeiture", "Requital"],
+    "description": "",
+    "description_reversed": ""
   }
 }

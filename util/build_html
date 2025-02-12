@@ -75,7 +75,28 @@ def inject_tarot_data(component, card, card_data):
     Returns:
         (bs4.element.Tag): Tarot component with data injected
     """
-    component["id"] = card
+    pip_number = card.split("-")[0]
+    if pip_number in [
+        "ace",
+        "two",
+        "three",
+        "four",
+        "five",
+        "six",
+        "seven",
+        "eight",
+        "nine",
+        "ten",
+        "page",
+        "knight",
+        "queen",
+        "king",
+    ]:
+        # if this is minor arcana, we'll set the ID to just be the number
+        # may need to revisit this if I end up having cards from different suits on the same page
+        component["id"] = pip_number
+    else:
+        component["id"] = card
 
     for key, value in card_data.items():
         if key == "elements":
@@ -88,7 +109,11 @@ def inject_tarot_data(component, card, card_data):
         for element in component.find_all(
             string=lambda text: text and f"{{{{ {key} }}}}" in text
         ):
-            element.replace_with(element.replace(f"{{{{ {key} }}}}", replacement))
+            if key in ["description", "description_reversed"]:
+                replacement_html = BeautifulSoup(replacement, "html.parser")
+                element.replace_with(replacement_html)
+            else:
+                element.replace_with(element.replace(f"{{{{ {key} }}}}", replacement))
 
         # replace in tags
         for tag in component.find_all(True):
