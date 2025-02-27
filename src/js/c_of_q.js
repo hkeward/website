@@ -2,12 +2,18 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     const startButton = document.getElementById("start_practice");
+    const scoreHolderDiv = document.getElementById("score_holder");
     const questionContainer = document.getElementById("question");
     const answersContainer = document.getElementById("answers");
     const navigationDiv = document.getElementById("navigation");
+    const scoreButtonToggle = document.getElementById("toggle_score");
+    const scoreDiv = document.getElementById("score");
 
     let questions = [];
     let remainingQuestions = [];
+
+    let n_correct_answers = 0;
+    let n_total_answers = 0;
 
     async function loadQuestions() {
         try {
@@ -16,6 +22,17 @@ document.addEventListener('DOMContentLoaded', () => {
             remainingQuestions = [...questions];
         } catch (error) {
             console.error("Error loading questions:", error);
+        }
+    }
+
+    function toggleScoreButton() {
+        buttonText = scoreButtonToggle.innerText;
+        if (buttonText == "Hide score") {
+            scoreButtonToggle.innerText = "Show score";
+            scoreDiv.style.visibility = "hidden";
+        } else {
+            scoreButtonToggle.innerText = "Hide score";
+            scoreDiv.style.visibility = "visible";
         }
     }
 
@@ -35,12 +52,18 @@ document.addEventListener('DOMContentLoaded', () => {
         return answers;
     }
 
+    function updateScore() {
+        correct_answers_proportion = Math.round(n_correct_answers / n_total_answers * 100);
+        scoreDiv.innerText = `${n_correct_answers} / ${n_total_answers} (${correct_answers_proportion} %)`;
+    }
+
     function checkAnswer(button, selected_answer, correct_answer) {
         const buttons = answersContainer.querySelectorAll("button");
 
         if (selected_answer === correct_answer) {
             button.style.background = "rgb(154, 226, 72)";
             button.style.color = "black";
+            n_correct_answers += 1;
         } else {
             button.style.background = "rgb(226, 85, 72)";
             button.style.color = "black";
@@ -57,6 +80,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         navigationDiv.style.display = "flex";
+        n_total_answers += 1;
+        updateScore();
     }
 
     function getRandomQuestion() {
@@ -95,11 +120,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     startButton.addEventListener("click", function () {
         startButton.remove();
+        scoreHolderDiv.style.display = "flex";
         getRandomQuestion();
     });
 
     navigationDiv.addEventListener("click", function () {
         getRandomQuestion();
+    });
+
+    scoreButtonToggle.addEventListener("click", function () {
+        toggleScoreButton();
     });
 
 });
