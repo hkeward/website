@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const navigationDiv = document.getElementById("navigation");
     const scoreButtonToggle = document.getElementById("toggle_score");
     const scoreDiv = document.getElementById("score");
+    const restartButton = document.getElementById("restart");
 
     let questions = [];
     let remainingQuestions = [];
@@ -55,6 +56,23 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateScore() {
         correct_answers_proportion = Math.round(n_correct_answers / n_total_answers * 100);
         scoreDiv.innerText = `${n_correct_answers} / ${n_total_answers} (${correct_answers_proportion} %)`;
+
+        let score_color;
+
+        if (correct_answers_proportion < 50) {
+            score_color = "rgb(226, 85, 72)";
+        } else if (50 <= correct_answers_proportion && correct_answers_proportion < 70) {
+            score_color = "rgb(234, 200, 63)";
+        } else if (70 <= correct_answers_proportion && correct_answers_proportion < 80) {
+            score_color = "rgb(184, 238, 60)";
+        } else if (80 <= correct_answers_proportion && correct_answers_proportion < 90) {
+            score_color = "rgb(144, 197, 20)";
+        }
+        else {
+            score_color = "rgb(22, 218, 32)";
+        }
+
+        scoreDiv.style.color = score_color;
     }
 
     function checkAnswer(button, selected_answer, correct_answer) {
@@ -131,5 +149,9 @@ document.addEventListener('DOMContentLoaded', () => {
     scoreButtonToggle.addEventListener("click", function () {
         toggleScoreButton();
     });
+
+    restartButton.addEventListener("click", function () {
+        location.reload();
+    })
 
 });
