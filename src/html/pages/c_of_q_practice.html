@@ -4,8 +4,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
+  <title>C of Q practice</title>
   <link rel="stylesheet" type="text/css" href="/css/styles.css">
+  <style>
+    #correct:hover {
+      background-color: rgb(154, 226, 72);
+      color: black;
+    }
+
+    #incorrect:hover {
+      background-color: rgb(226, 85, 72);
+      color: black;
+    }
+  </style>
 </head>
 
 <body>
@@ -27,8 +38,12 @@
           </div>
           <div id="question"></div>
           <div id="answers" class="flexbox-columns"></div>
-          <div id="navigation" class="flexbox-container" style="justify-content: flex-end; display: none">
+          <div id="multiple_choice_nav" class="flexbox-container" style="justify-content: flex-end; display: none">
             <button style="width: auto">Next Question ></button>
+          </div>
+          <div id="short_answer_nav" class="flexbox-container" style="display: none">
+            <button id="correct" style="flex: 1">Got it right</button>
+            <button id="incorrect" style="flex: 1">Got it wrong</button>
           </div>
         </div>
       </div>

@@ -5,10 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const scoreHolderDiv = document.getElementById("score_holder");
     const questionContainer = document.getElementById("question");
     const answersContainer = document.getElementById("answers");
-    const navigationDiv = document.getElementById("navigation");
+    const multipleChoiceNavigationDiv = document.getElementById("multiple_choice_nav");
     const scoreButtonToggle = document.getElementById("toggle_score");
     const scoreDiv = document.getElementById("score");
     const restartButton = document.getElementById("restart");
+    const shortAnswerNavigationDiv = document.getElementById("short_answer_nav");
+    const shortAnswerCorrectButton = document.getElementById("correct");
+    const shortAnswerIncorrectButton = document.getElementById("incorrect");
 
     let questions = [];
     let remainingQuestions = [];
@@ -42,7 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
         while (answersContainer.firstChild) {
             answersContainer.removeChild(answersContainer.firstChild);
         }
-        navigationDiv.style.display = "none";
+        multipleChoiceNavigationDiv.style.display = "none";
+        shortAnswerNavigationDiv.style.display = "none";
     }
 
     function shuffleAnswers(answers) {
@@ -75,6 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
         scoreDiv.style.color = score_color;
     }
 
+    // Multiple choice questions 
     function checkAnswer(button, selected_answer, correct_answer) {
         const buttons = answersContainer.querySelectorAll("button");
 
@@ -97,41 +102,60 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        navigationDiv.style.display = "flex";
+        multipleChoiceNavigationDiv.style.display = "flex";
         n_total_answers += 1;
         updateScore();
     }
 
-    function getRandomQuestion() {
-        if (remainingQuestions.length === 0) {
-            // TODO show results
-            questionContainer.innerText = "No more questions!";
-            return;
-        }
+    // Short answer questions
+    function showShortAnswer(button, answer) {
+        button.remove();
+        const answerDiv = document.createElement("div");
+        answerDiv.textContent = answer;
+        answersContainer.appendChild(answerDiv);
+        shortAnswerNavigationDiv.style.display = "flex";
+    }
 
+    function incrementScore(n_correct) {
+        n_correct_answers += n_correct;
+        n_total_answers += 1;
+        updateScore();
+        getRandomQuestion();
+    }
+
+    function getRandomQuestion() {
         clearQuestion();
 
-        const randomIndex = Math.floor(Math.random() * remainingQuestions.length);
-        const selectedQuestion = remainingQuestions.splice(randomIndex, 1)[0];
+        if (remainingQuestions.length === 0) {
+            let correct_answers_proportion = Math.round(n_correct_answers / n_total_answers * 100);
+            let pass_fail = correct_answers_proportion >= 70 ? "passed!!!!" : "failed :( But try again, you got this!!"
+            questionContainer.innerText = `Finished all questions -- You ${pass_fail}`;
+            if (scoreButtonToggle.innerText == "Show score") {
+                toggleScoreButton();
+            }
+        } else {
+            const randomIndex = Math.floor(Math.random() * remainingQuestions.length);
+            const selectedQuestion = remainingQuestions.splice(randomIndex, 1)[0];
 
-        questionContainer.innerText = selectedQuestion.question;
+            questionContainer.innerText = selectedQuestion.question;
 
-        // Multiple choice
-        if (selectedQuestion.type == "multiple_choice") {
-            let answers = selectedQuestion.wrong_answers.concat([selectedQuestion.correct_answer]);
-            answers = shuffleAnswers(answers);
+            if (selectedQuestion.type == "multiple_choice") {
+                let answers = selectedQuestion.wrong_answers.concat([selectedQuestion.correct_answer]);
+                answers = shuffleAnswers(answers);
 
-            answers.forEach(answer => {
+                answers.forEach(answer => {
+                    const button = document.createElement("button");
+                    button.textContent = answer;
+                    button.addEventListener("click", () => checkAnswer(button, answer, selectedQuestion.correct_answer));
+                    answersContainer.appendChild(button);
+                });
+            } else if (selectedQuestion.type == "short_answer") {
                 const button = document.createElement("button");
-                button.textContent = answer;
-                button.addEventListener("click", () => checkAnswer(button, answer, selectedQuestion.correct_answer));
+                button.textContent = "Show answer";
+                button.addEventListener("click", () => showShortAnswer(button, selectedQuestion.answer));
                 answersContainer.appendChild(button);
-            });
+            }
         }
-
-        // Short answer
-
-        // Diagram
     }
 
     loadQuestions();
@@ -142,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
         getRandomQuestion();
     });
 
-    navigationDiv.addEventListener("click", function () {
+    multipleChoiceNavigationDiv.addEventListener("click", function () {
         getRandomQuestion();
     });
 
@@ -154,4 +178,11 @@ document.addEventListener('DOMContentLoaded', () => {
         location.reload();
     })
 
+    shortAnswerCorrectButton.addEventListener("click", function () {
+        incrementScore(1);
+    });
+
+    shortAnswerIncorrectButton.addEventListener("click", function () {
+        incrementScore(0);
+    });
 });
