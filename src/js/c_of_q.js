@@ -90,17 +90,18 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             button.style.background = "rgb(226, 85, 72)";
             button.style.color = "black";
-            buttons.forEach(btn => {
-                btn.style.pointerEvents = "none";
-                btn.style.cursor = "default";
-                btn.removeEventListener("click", checkAnswer);
-
-                if (btn.textContent === correct_answer) {
-                    btn.style.background = "rgb(154, 226, 72)";
-                    btn.style.color = "black";
-                }
-            });
         }
+
+        buttons.forEach(btn => {
+            btn.style.pointerEvents = "none";
+            btn.style.cursor = "default";
+            btn.removeEventListener("click", checkAnswer);
+
+            if (btn.textContent === correct_answer) {
+                btn.style.background = "rgb(154, 226, 72)";
+                btn.style.color = "black";
+            }
+        });
 
         multipleChoiceNavigationDiv.style.display = "flex";
         n_total_answers += 1;
