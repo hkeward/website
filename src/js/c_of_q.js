@@ -112,6 +112,11 @@ document.addEventListener('DOMContentLoaded', () => {
         button.remove();
         const answerDiv = document.createElement("div");
         answerDiv.textContent = answer;
+        answerDiv.style.color = "white";
+        answerDiv.style.fontSize = "1.5em";
+        answerDiv.style.border = "2px solid rgb(154, 226, 72)";
+        answerDiv.style.borderRadius = "8px";
+        answerDiv.style.padding = "10px";
         answersContainer.appendChild(answerDiv);
         shortAnswerNavigationDiv.style.display = "flex";
     }
