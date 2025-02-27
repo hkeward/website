@@ -1,0 +1,24 @@
+[
+  {
+    "type": "multiple_choice",
+    "question": "You are installing a 100 HP, 600 volt, 3 phase pump motor with a service factor of 1.18. What is the maximum permissible size circuit breaker that may be installed?",
+    "wrong_answers": ["110A", "125A", "250A"],
+    "correct_answer": "225A"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "The maximum number of 347V switches that may be installed in a device box without partitions?",
+    "wrong_answers": ["2", "3", "4"],
+    "correct_answer": "1"
+  },
+  {
+    "type": "short_answer",
+    "question": "Where can you not install a phone jack?",
+    "answer": "Bathroom"
+  },
+  {
+    "type": "short_answer",
+    "question": "For a 120/208 to 347/600 change, what do you have to change?",
+    "answer": "Location"
+  }
+]
