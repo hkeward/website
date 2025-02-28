@@ -901,8 +901,264 @@
   {
     "type": "multiple_choice",
     "question": "When more than one start button is required in a magnetic starter circuit, how should they be connected?",
-    "wrong_answers": ["In series with the holding contacfts", "Parallel with the stop button", "Parallle with the other stop buttons"],
+    "wrong_answers": ["In series with the holding contacts", "Parallel with the stop button", "Parallel with the other stop buttons"],
     "answer": "Parallel with the holding contacts"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "To increase the speed of a DC shunt motor to approximately 20% ABOVE the full load speed, you would?",
+    "wrong_answers": ["Insert a rheostat in parallel with the shunt field", "Insert a rheostat in series with the series field"],
+    "answer": "Insert a rheostat in series with the shunt field"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "Electrical system harmonics may be caused by which of the following types of electrical equipment?",
+    "wrong_answers": ["Baseboard heating", "Motor starter contacts", "Incandescent lighting"],
+    "answer": "Variable frequency drives"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "The drawing of the controller shown is in what position?",
+    "wrong_answers": ["Off", "Reverse", "Neutral"],
+    "answer": "Forward",
+    "img": "/assets/images/c_of_q/what_position.png"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What can be used to correct armature reaction?",
+    "wrong_answers": ["Adding more load", "Adding more copper to the armature", "By interpoles of opposite polarity"],
+    "answer": "By shifting of the brushes"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the purpose of the first symbol on line five of the diagram?",
+    "wrong_answers": ["A float switch to energize CR-2", "A time delay device to energize CR-2", "A limit switch to energize CR-2"],
+    "answer": "A pressure switch to energize CR-2",
+    "img": "/assets/images/c_of_q/big_huge_diagram2.png"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What has a magnetic instantaneous circuit breaker been designed to do in a motor branch circuit?",
+    "wrong_answers": ["Provide overload protection", "Can't be used as branch circuit overcurrent protection", "Provide surge protection"],
+    "answer": "Trip at 215% of the motor's LRC"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "The field foss (toss??) relay in a DC motor starter is used to provide what type of protection?",
+    "wrong_answers": ["High speed due to low current in the shunt field", "High speed due to low current in the armature winding", "Low speed due to low current in the shunt field"],
+    "answer": "High armature current during start-up"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the minimum size of T90 conductors run in EMT to feed a pressure pump motor that has teh following rating: 75 Hp, 600 volt, 3-phase?",
+    "wrong_answers": ["1 AWG", "2 AWG", "4 AWG"],
+    "answer": "3 AWG"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "A piece of process equipment is required to start up automatically after power interruption. Which of the following types of control should be used?",
+    "wrong_answers": ["Low-voltage protection", "3-wire control", "PLC controller"],
+    "answer": "Low-voltage release"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "A servo motor is being used in a complex industrial control circuit to control a robotic arm. The robotic arm is moving slowly back and forth (oscillating) instead of moving to is next position. What is the fist thing that should be done when troubleshooting this problem?",
+    "wrong_answers": ["See if the control circuit is in standby mode", "Ask the operator to go through the sequence of operation", "Reprogram the unit"],
+    "answer": "Troubleshoot the servo motor to make sure it is finding its position"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What has a magnetic instantaneous circuit breaker been designed to do in a DC motor branch circuit for a 40 Hp motor?",
+    "wrong_answers": ["Provide overload protection", "Can't be used as branch circuit overcurrent protection", "Provide overheating protection"],
+    "answer": "Trip at 250% of the motor's f/a"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "Why does a large DC motor require the use of a reduced voltage starter?",
+    "wrong_answers": ["Increase the starting torque", "Reduce arcing at the brushes", "Allow the motor to start"],
+    "answer": "Reduce the inrush current"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "A 3-phase motor draws a full load of current at 32 amp. What is the minimum size of TW75 conductors that can be connected to the motor?",
+    "wrong_answers": ["#6 AWG", "#10 AWG", "#12 AWG"],
+    "answer": "#8 AWG"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the minimum size of T90 conductor to be run into the connection box to feed a pressure pump motor that has the following rating, 75 Hp, 460 volt, 3-phase?",
+    "wrong_answers": ["#2 AWG", "#3 AWG", "#4 AWG"],
+    "answer": "#1 AWG"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the maximum size of time-delay fuse that can be used to protect a 30 hp, 460 V, 3-phase, S.F. 1.1, synchronous motor generator?",
+    "wrong_answers": ["45 amp", "60 amp", "70 amp"],
+    "answer": "50 amp"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the maximum rating of the time-delay fuses that are used to provide overload protection for a 50 hp, 208 V, 3-phase refrigeration compressor?",
+    "wrong_answers": ["162.5 amp", "164.5 amp", "200.2 amp"],
+    "answer": "178.8 amp"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the minimum RW90 (XLPE) conductor size for a 3-phase, 240 volt, 25 HP squirrel-cage press motor?",
+    "wrong_answers": ["#6 AWG", "#3 AWG", "#2 AWG"],
+    "answer": "#4 AWG"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the maximum rating of the overload relays that are used to provide overload protection for a 50 hp, 208 V, 3-phase refrigeration compressor?",
+    "wrong_answers": ["162.5 amp", "164.5 amp", "178.8 amp"],
+    "answer": "200.2 amp"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the maximum rating of the overload relays that are used to protect a 30 HP, 600 V, 3-phase refrigeration compressor?",
+    "wrong_answers": ["32.0 A", "36.8 A", "40.0 A"],
+    "answer": "44.8 A"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the maximum size of circuit breaker that can be used to protect a 30 Hp, 460 V, 3-phase, S.F. 1.1 synchronous motor-generator?",
+    "wrong_answers": ["60 amp", "70 amp", "90 amp"],
+    "answer": "80 amp"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "An 'OFF DELAY' device is used in a circuit for the control of an apparatus, what happens when the ciruit to the apparatus is de-energized?",
+    "wrong_answers": ["The apparatus is energized immediately", "The apparatus is not energized until a specific period of time has lapsed", "The apparatus is de-energized immediately"],
+    "answer": "The apparatus is energized for a specific period of time after the stop is activated"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "A motor is protected with both a circuit breaker and with overload protection. What is the order the protective devices are to be placed in?",
+    "wrong_answers": ["The overload be located before the breaker", "The circuit breaker and the overload device be located in the same enclosure", "The overload device be capable of operating under a short circuit condition"],
+    "answer": "The overload device be located after the breaker"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "You are installing a motor starter in a location where the ambient temperature is 30°C higher than the location where the motor is installed. WHich of the following overload device types should be used in the motor starter?",
+    "wrong_answers": ["Solder pot", "Magnetic", "Not required"],
+    "answer": "Bi-metal type"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the minimum size of conductor in a SOOW cable required to feed a 20 hp, 208 V, 3-phase pump motor installed in a sump?",
+    "wrong_answers": ["6", "4", "3"],
+    "answer": "2"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "A TENV motor with a class F insulation rating must be connected ith a conductor having what minimum insulation temperature rating in an area with an ambient temperature of 40°C?",
+    "wrong_answers": ["90°C", "100°C", "110°C"],
+    "answer": "120°C"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the maximum rating of the time delay fuses in the main disconnect for the following 3-phase 208 volt, 60 Hz motors? 15 Hp, 10 Hp, 5 Hp, 5 Hp",
+    "wrong_answers": ["150 amp", "145 amp", "100 amp"],
+    "answer": "125 amp"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "A three-phase, continuous duty squirrel-cage motor with a full load current of 30 amp requires what size of RW90 XLPE conductors when they are to be run in a raceway? (And connected to the motors with terminal marked at 75 degree)",
+    "wrong_answers": ["#12 AWG", "#10 AWG", "#6 AWG"],
+    "answer": "#8 AWG"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "In the illustration, if power is removed from the circuit, what will happen to the controls?",
+    "wrong_answers": ["Stops the control relay only", "Start the controls when reset", "Start the reverse control only"],
+    "answer": "Stops the controls under all circumstances",
+    "img": "/assets/images/c_of_q/controls.png"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "In the figure, the motor is running in the forward position when the selector switch is in the auto position. If a ground occurs at the point 'Y' in the diagram, what will happen to the motor?",
+    "wrong_answers": ["Stop because the overload relay will trip", "Continue to run normally", "Stop and continue to run in the opposite direction"],
+    "answer": "Stop because the control circuit fuse will blow",
+    "img": "/assets/images/c_of_q/ground_y.png"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "When does a squirrel-cage motor not require an overload protection?",
+    "wrong_answers": ["When it is 5 HP or less and will be in constant supervision when on", "120 volt and below and will be in constant supervision when run", "Never"],
+    "answer": "When it is only 1/2 HP and will be in constant supervision when on"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the purpose of the relay marked CR4?",
+    "wrong_answers": ["Allows CR3 to de-energize", "Allows the correct sequence light to be on", "Both the error and the correct sequence light to be on"],
+    "answer": "Allows error light to be on",
+    "img": "/assets/images/c_of_q/relay_cr4.png"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "The locked rotor current of a motor-compressor may be calculated as approximately this factor times the full load rating of the motor.",
+    "wrong_answers": ["5 times", "8 times", "10 times"],
+    "answer": "6 times"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is required to be part of motor's installation, when automatic restarting of motor would create a hazard?",
+    "wrong_answers": ["Lockout stop button", "Mechanical interlocks", "Thermal release"],
+    "answer": "Low-voltage protection"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the purpose of the dotted line between the push button on line 1 and push button on line 2?",
+    "wrong_answers": ["Electrical interlocks", "Indicates counter EMF", "Notes electrical seal-ins"],
+    "answer": "Mechanical interlocks",
+    "img": "/assets/images/c_of_q/dotted_line.png"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "Which of the following is not a DC generator?",
+    "wrong_answers": ["Series", "Shunt", "Compound"],
+    "answer": "Compound parallel"
+  },
+  {
+    "type": "short_answer",
+    "question": "What is the vertical ground clearance for a 60m span?",
+    "answer": "6.7m"
+  },
+  {
+    "type": "short_answer",
+    "question": "What will the wattmeter see when using a 800:5 CT if the load is 200A?",
+    "answer": "1.25 A"
+  },
+  {
+    "type": "short_answer",
+    "question": "What has to be done for a receptacle 2.5m outdoors?",
+    "answer": "GFCI"
+  },
+  {
+    "type": "short_answer",
+    "question": "What size breaker for a mogul light?",
+    "answer": "40 A"
+  },
+  {
+    "type": "short_answer",
+    "question": "What type (material) of hardware can be used in a marine Warf?",
+    "answer": "Stainless"
+  },
+  {
+    "type": "short_answer",
+    "question": "How many wires to a photocell?",
+    "answer": "3 (not PVC)"
+  },
+  {
+    "type": "short_answer",
+    "question": "How many circuits for an 85A panel?",
+    "answer": "24"
+  },
+  {
+    "type": "short_answer",
+    "question": "What overrides the specs?",
+    "answer": "Addendums"
   },
   {
     "type": "short_answer",
@@ -913,5 +1169,95 @@
     "type": "short_answer",
     "question": "For a 120/208 to 347/600 change, what do you have to change?",
     "answer": "Location"
+  },
+  {
+    "type": "short_answer",
+    "question": "If you have to change something on a stairwell 6m up, what do you use?",
+    "answer": "Baker scaffold"
+  },
+  {
+    "type": "short_answer",
+    "question": "How far would a wire be allowed from a porch?",
+    "answer": "1m"
+  },
+  {
+    "type": "short_answer",
+    "question": "What is the ampacity of a capacitor feeder?",
+    "answer": "135%"
+  },
+  {
+    "type": "short_answer",
+    "question": "How far from a metallic face plate must the receptacle stick out?",
+    "answer": "4mm"
+  },
+  {
+    "type": "short_answer",
+    "question": "How do you raise a transformer?",
+    "answer": "Chain hoist"
+  },
+  {
+    "type": "short_answer",
+    "question": "What type of fuse is used at a distribution center?",
+    "answer": "Low melting point"
+  },
+  {
+    "type": "short_answer",
+    "question": "What type of PPE is needed for a scissor lift?",
+    "answer": "Fall arrest system"
+  },
+  {
+    "type": "short_answer",
+    "question": "What size of wire for a nurse call in an integral assembly with 10 conductors?",
+    "answer": "#26 AWG"
+  },
+  {
+    "type": "short_answer",
+    "question": "Where can EMT be run?",
+    "answer": "In concrete with a bond"
+  },
+  {
+    "type": "short_answer",
+    "question": "On a construction site, what type of cord can you use?",
+    "answer": "SOW"
+  },
+  {
+    "type": "short_answer",
+    "question": "Where do you bond a light pole?",
+    "answer": "At the access cover"
+  },
+  {
+    "type": "short_answer",
+    "question": "What plans do you find a T-stat on?",
+    "answer": "Architectural"
+  },
+  {
+    "type": "short_answer",
+    "question": "What ground connection is used in a wet location?",
+    "answer": "Brass clamp 10-908"
+  },
+  {
+    "type": "short_answer",
+    "question": "How do you splice a ground wire?",
+    "answer": "With a compression crimp"
+  },
+  {
+    "type": "short_answer",
+    "question": "What type of indoor box is used when there is settling dust?",
+    "answer": "Type 5"
+  },
+  {
+    "type": "short_answer",
+    "question": "A box is 6m from a gas dispenser. What type of box is needed?",
+    "answer": "Zone 1 Class 2: Section 20"
+  },
+  {
+    "type": "short_answer",
+    "question": "What can be shared on an exit light circuit?",
+    "answer": "Emergency lights"
+  },
+  {
+    "type": "short_answer",
+    "question": "A 480 V starter should have 120 V control but the control XFMR is outputting 240 V. Why?",
+    "answer": "The secondary coils are in series"
   }
 ]

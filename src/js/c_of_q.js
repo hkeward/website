@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const multipleChoiceNavigationDiv = document.getElementById("multiple_choice_nav");
     const scoreButtonToggle = document.getElementById("toggle_score");
     const scoreDiv = document.getElementById("score");
+    const skipButton = document.getElementById("skip");
     const restartButton = document.getElementById("restart");
     const endNowButton = document.getElementById("end_now");
     const shortAnswerNavigationDiv = document.getElementById("short_answer_nav");
@@ -162,6 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleScoreButton();
         }
 
+        skipButton.remove();
         endNowButton.remove();
         scoreButtonToggle.remove();
 
@@ -250,6 +252,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     scoreButtonToggle.addEventListener("click", function () {
         toggleScoreButton();
+    });
+
+    skipButton.addEventListener("click", function () {
+        getRandomQuestion();
     });
 
     endNowButton.addEventListener("click", function () {
