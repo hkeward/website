@@ -1259,5 +1259,192 @@
     "type": "short_answer",
     "question": "A 480 V starter should have 120 V control but the control XFMR is outputting 240 V. Why?",
     "answer": "The secondary coils are in series"
+  },
+  {
+    "type": "short_answer",
+    "question": "What does this hand signal mean?",
+    "answer": "Load Up",
+    "img": "/assets/images/c_of_q/symbol1.png"
+  },
+  {
+    "type": "short_answer",
+    "question": "What does this hand signal mean?",
+    "answer": "Load Down",
+    "img": "/assets/images/c_of_q/symbol2.png"
+  },
+  {
+    "type": "short_answer",
+    "question": "What does this hand signal mean?",
+    "answer": "Load Up Slowly",
+    "img": "/assets/images/c_of_q/symbol3.png"
+  },
+  {
+    "type": "short_answer",
+    "question": "What does this hand signal mean?",
+    "answer": "Load Down Slowly",
+    "img": "/assets/images/c_of_q/symbol4.png"
+  },
+  {
+    "type": "short_answer",
+    "question": "What does this hand signal mean?",
+    "answer": "Boom Up",
+    "img": "/assets/images/c_of_q/symbol5.png"
+  },
+  {
+    "type": "short_answer",
+    "question": "What does this hand signal mean?",
+    "answer": "Boom Down",
+    "img": "/assets/images/c_of_q/symbol6.png"
+  },
+  {
+    "type": "short_answer",
+    "question": "What does this hand signal mean?",
+    "answer": "Boom Up Slowly",
+    "img": "/assets/images/c_of_q/symbol7.png"
+  },
+  {
+    "type": "short_answer",
+    "question": "What does this hand signal mean?",
+    "answer": "Boom Down Slowly",
+    "img": "/assets/images/c_of_q/symbol8.png"
+  },
+  {
+    "type": "short_answer",
+    "question": "What does this hand signal mean?",
+    "answer": "Boom Up Load Down",
+    "img": "/assets/images/c_of_q/symbol9.png"
+  },
+  {
+    "type": "short_answer",
+    "question": "What does this hand signal mean?",
+    "answer": "Boom Down Load Up",
+    "img": "/assets/images/c_of_q/symbol10.png"
+  },
+  {
+    "type": "short_answer",
+    "question": "What does this hand signal mean?",
+    "answer": "Everything Slowly",
+    "img": "/assets/images/c_of_q/symbol11.png"
+  },
+  {
+    "type": "short_answer",
+    "question": "What does this hand signal mean?",
+    "answer": "Use Whip Line",
+    "img": "/assets/images/c_of_q/symbol12.png"
+  },
+  {
+    "type": "short_answer",
+    "question": "What does this hand signal mean?",
+    "answer": "Use Main Line",
+    "img": "/assets/images/c_of_q/symbol13.png"
+  },
+  {
+    "type": "short_answer",
+    "question": "What does this hand signal mean?",
+    "answer": "Travel Forward",
+    "img": "/assets/images/c_of_q/symbol14.png"
+  },
+  {
+    "type": "short_answer",
+    "question": "What does this hand signal mean?",
+    "answer": "Turn Right",
+    "img": "/assets/images/c_of_q/symbol15.png"
+  },
+  {
+    "type": "short_answer",
+    "question": "What does this hand signal mean?",
+    "answer": "Turn Left",
+    "img": "/assets/images/c_of_q/symbol16.png"
+  },
+  {
+    "type": "short_answer",
+    "question": "What does this hand signal mean?",
+    "answer": "Shorten Hydraulic Boom",
+    "img": "/assets/images/c_of_q/symbol17.png"
+  },
+  {
+    "type": "short_answer",
+    "question": "What does this hand signal mean?",
+    "answer": "Extend Hydraulic Boom",
+    "img": "/assets/images/c_of_q/symbol18.png"
+  },
+  {
+    "type": "short_answer",
+    "question": "What does this hand signal mean?",
+    "answer": "Swing Load",
+    "img": "/assets/images/c_of_q/symbol19.png"
+  },
+  {
+    "type": "short_answer",
+    "question": "What does this hand signal mean?",
+    "answer": "Stop",
+    "img": "/assets/images/c_of_q/symbol20.png"
+  },
+  {
+    "type": "short_answer",
+    "question": "What does this hand signal mean?",
+    "answer": "Close Clam",
+    "img": "/assets/images/c_of_q/symbol21.png"
+  },
+  {
+    "type": "short_answer",
+    "question": "What does this hand signal mean?",
+    "answer": "Open Clam",
+    "img": "/assets/images/c_of_q/symbol22.png"
+  },
+  {
+    "type": "short_answer",
+    "question": "What does this hand signal mean?",
+    "answer": "Dog Everything",
+    "img": "/assets/images/c_of_q/symbol23.png",
+    "erratta": "What on earth does 'Dog Everything' mean lol"
+  },
+  {
+    "type": "short_answer",
+    "question": "What does this WHMIS symbol mean? What class is it? What are some risks and precautions?",
+    "answer": "Compressed Gas -- Class A. Materials which are normally gaseous kept in a pressurized container. Risks: Could explode due to pressure; could explode if heated or dropped; possible hazard from the force of explosion and the release of contents. Precautions: Ensure containr is always secured; store in appropriate designated areas; do not drop or allow to fall.",
+    "img": "/assets/images/c_of_q/whmis1.png"
+  },
+  {
+    "type": "short_answer",
+    "question": "What does this WHMIS symbol mean? What class is it? What are some risks and precautions?",
+    "answer": "Flammable and Combustible -- Class B. Materials which will continue to burn after being exposed to a flame or other ignition source. Risks: May ignite spontaneously; may be a material which will release flammable products if allowed to degrade or when exposed to water. Precautions: Store in properly designated areas; work in well-ventilated areas; avoid heating; avoid sources of sparks/flames; ensure electrical sources are safe.",
+    "img": "/assets/images/c_of_q/whmis2.png"
+  },
+  {
+    "type": "short_answer",
+    "question": "What does this WHMIS symbol mean? What class is it? What are some risks and precautions?",
+    "answer": "Oxidizing Material -- Class C. Materials which can cause other materials to burn or support combustion. Risks: Can cause skin or eye burns; increase fire and explosion hazard; may cause combustibles to explode or react violently. Precautions: Store in areas away from combustibles; wear body, hand, face and eye protection; store in proper containers which will not rust or oxidize.",
+    "img": "/assets/images/c_of_q/whmis3.png"
+  },
+  {
+    "type": "short_answer",
+    "question": "What does this WHMIS symbol mean? What class is it? What are some risks and precautions?",
+    "answer": "Toxic Immediate and Severe -- Class D. Poisons / potentially fatal materials which cause immediate and severe harm. Risks: May be fatal if ingested or inhaled; may be absorbed through the skin; small volumes have a toxic effect. Precautions: Avoid breathing dust or vapours and avoid contact with skin or eyes; wear protective clothing which is effective against fumes and vapours; wear face and eye protection; work in well ventilated areas and wear breathing protection.",
+    "img": "/assets/images/c_of_q/whmis4.png"
+  },
+  {
+    "type": "short_answer",
+    "question": "What does this WHMIS symbol mean? What class is it? What are some risks and precautions?",
+    "answer": "Toxic Long Term Concealed -- Class D. Materials which have harmful effects after repeated exposure over long periods of time. Risks: May cause death or permanent injury; may cause birth defects or sterility; may cause cancer; may be sensitizer causing allergies. Precautions: Wear appropriate personal protection; work in a well ventilated area; store in appropriate designated areas; avoid direct contact; use hand, body, face and eye protection; ensure respiratory and body protection is appropriate for the specific hazard.",
+    "img": "/assets/images/c_of_q/whmis5.png"
+  },
+  {
+    "type": "short_answer",
+    "question": "What does this WHMIS symbol mean? What class is it? What are some risks and precautions?",
+    "answer": "Biohazardous Infectious -- Class D. Infectious agents or a biological toxin causing a serious disease or death. Risks: May cause anaphylactic shock; includes viruses, yeasts, moulds, bacteria and parasites which affect humans; includes fluids containing toxic products; includes cellular components. Precautions: Special training required work in designated biological areas with appropriate engineering controls; avoid forming aerosols; avoid breathing vapours; avoid contamination of people/area; Store only in special designated areas.",
+    "img": "/assets/images/c_of_q/whmis6.png"
+  },
+  {
+    "type": "short_answer",
+    "question": "What does this WHMIS symbol mean? What class is it? What are some risks and precautions?",
+    "answer": "Corrosive Materials -- Class E. Materials which react with metals and living tissue. Risks: Eye and skin irritation on exposure; severe burns/tissue damage on longer exposure; lung damage if inhaled; may cause blindness if eyes contacted; environmental damage from fumes. Precautions: wear body, face and eye protection; use breathing apparatus; ensure protective equipment is appropriate; work in well ventilated area; avoid all direct body contact; use appropriate storage containers with proper non-venting closures.",
+    "img": "/assets/images/c_of_q/whmis7.png"
+  },
+  {
+    "type": "short_answer",
+    "question": "What does this WHMIS symbol mean? What class is it? What are some risks and precautions?",
+    "answer": "Dangerously Reactive -- Class F. Materials which may have unexpected reactions. Risks: May react with water; may be chemically unstable; may explode if exposed to shock or heat; may release toxic or flammable vapours; may vigorously polymerize; may burn unexpectedly. Precautions: handle with care, avoiding vibration, shocks and sudden temperature changes; store in appropriate container; ensure storage containers are sealed; store and work in designated areas.",
+    "img": "/assets/images/c_of_q/whmis8.png"
   }
 ]
