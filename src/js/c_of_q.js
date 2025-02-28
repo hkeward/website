@@ -107,6 +107,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
+        if ("erratta" in question) {
+            const errattaDiv = document.createElement("div");
+            errattaDiv.innerText = question.erratta;
+            errattaDiv.style.fontStyle = "italic";
+            errattaDiv.style.color = "white";
+            answersContainer.appendChild(errattaDiv);
+        }
+
         multipleChoiceNavigationDiv.style.display = "flex";
         n_total_answers += 1;
         updateScore();
@@ -174,6 +182,11 @@ document.addEventListener('DOMContentLoaded', () => {
             questionContentsDiv.style.flex = 3;
             questionContentsDiv.style.fontSize = "0.7em";
             questionContentsDiv.style.color = "white";
+            if ("img" in question) {
+                let questionImg = document.createElement("img");
+                questionImg.src = question.img;
+                questionContentsDiv.appendChild(questionImg);
+            }
             let questionAnswer = document.createElement("div");
             questionAnswer.innerText = question.answer;
             questionAnswer.style.flex = 1;
@@ -195,6 +208,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const selectedQuestion = remainingQuestions.splice(randomIndex, 1)[0];
 
             questionContainer.innerText = selectedQuestion.question;
+
+            if ("img" in selectedQuestion) {
+                const imgContainer = document.createElement("div");
+                const imgElement = document.createElement("img");
+                imgElement.src = selectedQuestion.img;
+                imgContainer.appendChild(imgElement);
+                answersContainer.appendChild(imgContainer);
+            }
 
             if (selectedQuestion.type == "multiple_choice") {
                 let answers = selectedQuestion.wrong_answers.concat([selectedQuestion.answer]);

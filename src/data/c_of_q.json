@@ -73,15 +73,836 @@
   },
   {
     "type": "multiple_choice",
-    "question": "",
-    "wrong_answers": ["", "", ""],
-    "answer": ""
+    "question": "A construction drawing has a scale of 1:200. If a line on the drawing measured 11.5mm, what would be the actual measured length on the project?",
+    "wrong_answers": ["2300 cm", "230 mm", "23000 mm"],
+    "answer": "2.3 m"
   },
   {
     "type": "multiple_choice",
-    "question": "",
-    "wrong_answers": ["", "", ""],
-    "answer": ""
+    "question": "Which section in a construction set of drawings would you find information on ventilation ducts?",
+    "wrong_answers": ["structural", "architectural", "electrical"],
+    "answer": "mechanical"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the maximum number of 90° bends permitted in a run of rigid PVC if installed underground?",
+    "wrong_answers": ["2", "6", "unlimited"],
+    "answer": "4"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "When installing branch circuit conductors underground, what is the minimum depth of the sand that must be under the conductors?",
+    "wrong_answers": ["50mm", "100mm", "150mm"],
+    "answer": "75mm"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the maximum number of #18 TEW control conductors permitted to be installed into a 6 inch rigid metal conduit?",
+    "wrong_answers": ["196", "138", "259"],
+    "answer": "200"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the maximum current rating of four- 1250kcmil RW-90 Al (XLPE) 600V no jacket conductors installed in a run of EMT for a 120/208 volt, three phase, four wire feeder?",
+    "wrong_answers": ["424 A", "516 A", "645 A"],
+    "answer": "545 A"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the maximum rating/setting of over-current device required to protect a residential branch circuit that has two baseboard heaters connected?",
+    "wrong_answers": ["15 A", "20 A", "25 A"],
+    "answer": "30 A"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "An isolation switch is required to be installed on a commercial roof-top heating/cooling unit. What is the minimum enclosure requirement in this case?",
+    "wrong_answers": ["CSA enclosure 1", "CSA enclosure 5", "CSA enclosure 13"],
+    "answer": "CSA enclosure 3R"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the minimum size of conductor permitted to be used for a class 2 circuit in a run of ENT?",
+    "wrong_answers": ["24 AWG", "22 AWG", "19 AWG"],
+    "answer": "16 AWG"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the minimum separation required between power conductors and communication conductors when they are installed in the same trench, and at the same depth?",
+    "wrong_answers": ["150mm", "600mm", "1 meter"],
+    "answer": "300mm"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "Two baseboard heaters are installed on a residential branch circuit and are connected using 14/2 NMD-90. If the heaters are 100 watt and 1500 watt respectively, what is the maximum length of the 14/2 NMD-90 cable?",
+    "wrong_answers": ["6.1 meters", "36.6 meters", "22.8 meters"],
+    "answer": "29.4 meters",
+    "erratta": "29.4 is crossed out and it says 31.64, this may be the right answer.."
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the minimum size of bond conductor required in a run of PVC, that supplies a 25 Hp, 600 volt, 3-phase refrigeration compressor, that is protected using time-delay fuses?",
+    "wrong_answers": ["#8 AWG", "#6 AWG", "#4 AWG"],
+    "answer": "#10 AWG"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the purpose of a lightning arrester?",
+    "wrong_answers": ["To prevent lightning from striking an electrical installation", "To prevent transient voltages from accumulating", "To monitor how many times lightning strikes an electrical installation"],
+    "answer": "To conduct excess voltage from a lightning strike to ground"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "When installing auxiliary gutter, what is the maximum distance between supports?",
+    "wrong_answers": ["1 meter", "2 meters", "3 meters"],
+    "answer": "1.5 meters"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the maximum amount of current that any one conductor can carry in a 22/6 ELC cable?",
+    "wrong_answers": ["2.5 amps", "3.5 amps", "3 amps"],
+    "answer": "2 amps"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the recomended tightening torque, when terminating a 750kcmil copper conductor to a lug that takes a 1/2\" hex socket?",
+    "wrong_answers": ["375 pound inches", "350 pound inches", "250 pound inches"],
+    "answer": "450 pound inches",
+    "erratta": "These are all crossed out and rewritten in Newton-metres; the correct answer is 113.0 Newton-metres. Also the lug is clarified to be a split-bolt."
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the minimum dimensions of 'X' in the pull box shown?",
+    "wrong_answers": ["424mm", "504mm", "378mm"],
+    "answer": "318mm",
+    "img": "/assets/images/c_of_q/x_pull_box.png"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the minimum ampacity of the RW-90 (XLPE) primary conductors that feed a 600 volt primary, 120/208 volt secondary, 112kVA 3-phase, dry-type transformer?",
+    "wrong_answers": ["#1/0 RW-90 (XLPE)", "#2/0 RW-90 (XLPE)", "#3/0 RW-90 (XLPE)"],
+    "answer": "#1 RW-90 (XLPE)"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "A 600 volt primary, 120/208 volt secondary, dry-type transformer has 70 amp time-delay fuses for its primary over-current protection. A lighting panel is installed on the secondary side directly to the transformer with no over-current protection. Based on this information, what is the minimum rating of the lighting panel?",
+    "wrong_answers": ["100 amps", "200 amps", "400 amps"],
+    "answer": "225 amps"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the minimum number of conductors required to connect the metallic gradient control mat to the switch operating handle grounding conductor, for a high-voltage gang-operated switch?",
+    "wrong_answers": ["one", "three", "four"],
+    "answer": "two"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the minimum size of copper conductor required to supply a control circuit of 5 amps at 600 voltes if using 2 parallel runs?",
+    "wrong_answers": ["#1/0 AWG", "#12 AWG", "#14 AWG"],
+    "answer": "#18 AWG"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "Using the diagram, what is the minimum number of conductors required in the conduit marked 'X'?",
+    "wrong_answers": ["two", "four", "five"],
+    "answer": "three",
+    "img": "/assets/images/c_of_q/min_n_conductors_conduit.png"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "Which of the following types of cables meet the minimum flame spread requirements for buildings of non-combustible construction without additional fire protection?",
+    "wrong_answers": ["Jacketed and unmarked armoured cable", "NMW-U", "NMD-90"],
+    "answer": "AC-90"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "Where would you find information on hazardous materials in a commercial establishment?",
+    "wrong_answers": ["Posted in the main office", "On WHMIS information sheets", "On safety material handling sheets"],
+    "answer": "On material safety data sheets"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "In which of the following is it permitted to install high voltage conductors?",
+    "wrong_answers": ["Wireway", "Rigid PVC", "Elevator shaft"],
+    "answer": "EMT"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the purpose of installing GFCI protection?",
+    "wrong_answers": ["To monitor neutral current", "To monitor current in the ungrounded conductor", "To monitor current in the bond conductor"],
+    "answer": "To monitor leakage current"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What does the symbol indicate?",
+    "wrong_answers": ["A check valve", "A filter", "A receiver"],
+    "answer": "A pneumatic valve",
+    "img": "/assets/images/c_of_q/symbol0.png"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "Three cable trays are to be installed in a tier. What is the minimum space between cable trays?",
+    "wrong_answers": ["600mm", "450mm", "300mm"],
+    "answer": "150mm"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "A 40 HP, 600 volt, 3-phase synchronous motor has a marked service factor of 1.1 and is protected with time-delay fuses. What is the minimum size of bond conductor required in the flexible metal conduit that supplies this motor?",
+    "wrong_answers": ["#12 AWG", "#8 AWG", "#6 AWG"],
+    "answer": "#10 AWG"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the maximum rating/setting of the over-current device used to protect fluorescent lighting fixtures in a commercial building if the fixtures are fed with #12/2 AC-90 cables?",
+    "wrong_answers": ["20 amps", "25 amps", "30 amps"],
+    "answer": "15 amps",
+    "erratta": "600V fluorescent lighting..?"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the maximum ampacity of a #10/4 SOW flexible cord that is used to feed a 3-phase, 600 volt pump motor?",
+    "wrong_answers": ["60 amps", "45 amps", "30 amps"],
+    "answer": "25 amps"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "A line voltage switch is to be installed in an elevator machine room. What is the minimum enclosure type necessary for this installation?",
+    "wrong_answers": ["CSA enclosure type 2", "CSA enclosure type 5", "CSA enclosure type 12"],
+    "answer": "CSA enclosure type 1"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the maximum distance from a panelboard to the first support, on a run of 27mm EMT installed in a commercial building?",
+    "wrong_answers": ["3.0 meters", "2.0 meters", "1.5 meters"],
+    "answer": "1.0 meters"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "You have just installed four baseboard heaters on the same branch circuit in a dwelling unit. If the circuit is fed using #8/2 NMD-90, what is the maximum range/setting of the over-current device protecting this circuit?",
+    "wrong_answers": ["15 amps", "20 amps", "40 amps"],
+    "answer": "30 amps"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "When installing insulated conductors in the same raceway that have different voltage ratings, how is the overall voltage rating determined?",
+    "wrong_answers": ["By using the voltage correction factor", "By using the highest voltage rating", "By using the average voltage rating"],
+    "answer": "By using the lowest voltage rating"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the proper procedure for terminating stranded aluminum conductors?",
+    "wrong_answers": ["Apply compound over the conductor and connector after installation", "Apply compound over the conductor and connector before installation", "Apply compound over the conductor and wipe off the excess before installation"],
+    "answer": "Clean the conductor and connector, then apply compound over both before installation"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "When using solid state devices, which of the following is a code requirement?",
+    "wrong_answers": ["Must be used to isolate equipment for maintenance", "Must prevent any voltage feedback", "Must NOT be used for computer equipment"],
+    "answer": "Must provide an additional disconnecting means"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "Where can a bare high-voltage bus be installed?",
+    "wrong_answers": ["Indoors in an electrical equipment room", "On the ceiling of an industrial plant", "Above an overhead crane"],
+    "answer": "In an electrical equipment vault"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "When can a final inspection be done on the electrical installation of a single residential dwelling by the inspection department?",
+    "wrong_answers": ["After the rough-in and service inspection", "After the service has been energized", "After the roof and windows have been installed"],
+    "answer": "After the entire electrical installation is complete"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "A type B & C fire extinguisher has what chemicals inside?",
+    "wrong_answers": ["Halon, CO2, and oxygen", "CO2 and oxygen", "Water and baking soda"],
+    "answer": "Halon and CO2"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "An electrician is required to use a powder actuated tool to fasten materials to a structure. Which of the following materials could the powder actuated tool be used to safely fasten?",
+    "wrong_answers": ["Steel to wood", "Concrete to wood", "Wood to wood"],
+    "answer": "Wood to concrete"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the maximum current rating of code fuses?",
+    "wrong_answers": ["400 amps", "225 amps", "30 amps"],
+    "answer": "600 amps"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "When can an electrician rough-in the electrical wiring of a single-family dwelling?",
+    "wrong_answers": ["Before the mechanical trades", "Before the plumber", "After the plumber"],
+    "answer": "After the mechanical trades"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the maximum distance that an auxiliary gutter can extend from the equipment that it is connected to?",
+    "wrong_answers": ["3m beyond the equipment", "4.5m beyond the equipment", "7.5m beyond the equipment"],
+    "answer": "6m beyond the equipment"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "When is it permissible to splice a service neutral conductor?",
+    "wrong_answers": ["In the main service disconnect", "In the service lateral conduit/raceway", "Underground"],
+    "answer": "At the service entrance head"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the maximum voltage rating of a # 3 TW-75 aluminum conductor?",
+    "wrong_answers": ["300 volts", "1000 volts", "5000 volts"],
+    "answer": "600 volts"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What size of single conductor RW-75 aluminum conductors (installed in free air) are required to supply a single-phase, 250 volt, non-continuous load of 135.9 amps, if the conductors are present and in contact with each other?",
+    "wrong_answers": ["#2 AWG", "#1/0 AWG", "#3/0 AWG"],
+    "answer": "#1 AWG"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "Which of the following systems is NOT required to be grounded?",
+    "wrong_answers": ["347 volt lighting systems", "347/600 volt services", "208 volt electric heating systems"],
+    "answer": "Electric arc furnaces"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "Which of the following conditions can rigid PVC conduit be used?",
+    "wrong_answers": ["In a class III hazardous location", "In fiberglass insulation", "In a paint spray booth"],
+    "answer": "In grade level concrete slabs"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "Where must the U-ground slot be located of 5-15R receptacles used in the bedroom area of a dwelling unit, if they are installed in a vertical plane?",
+    "wrong_answers": ["Uppermost", "Lowermost", "The receptacles cannot be mounted on a vertical plane"],
+    "answer": "Doesn't matter"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "Which of the following boxes can be used in masonry construction?",
+    "wrong_answers": ["1104-LA", "1004-L", "1110"],
+    "answer": "MBD-1"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the largest size of solid conductor that is permitted to be laid into a raceway?",
+    "wrong_answers": ["#12 AWG", "#8 AWG", "#6 AWG"],
+    "answer": "#10 AWG"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the minimum size of single conductor RW-90 XLPE 600 volt (no jacket) run arielly between buildings, required to supply a circuit with a 35 amp continuous load?",
+    "wrong_answers": ["#12 AWG", "#10 AWG", "#6 AWG"],
+    "answer": "#8 AWG"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "There are three-14/3 NMD-90 cables that run through a wooden support beam that is 750mm thick. What is the maximum amount of non-continuous load that can be connected to each insulated wire of these cables?",
+    "wrong_answers": ["12 amps", "10.5 amps", "18 amps"],
+    "answer": "15 amps"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the allowable ampacity of #1 AWG type NS 75 triplex cable that feeds a residential overhead service?",
+    "wrong_answers": ["120 amps", "130 amps", "190 amps"],
+    "answer": "160 amps",
+    "erratta": "145 amps was crossed out and 160 amps was written, and this is supposedly the answer. Also in the question NS-1 was crossed out and NS-75 written instead."
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the minimum size of RW-90 XLPE 600 volt (no jacket) aluminum conductors that are required to supply a 200 amp, 120/240 volt, single-phase residential service?",
+    "wrong_answers": ["#250 kcmil", "#3/0 AWG", "#2/0 AWG"],
+    "answer": "#4/0 AWG"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is minimum size of copper ground conductor that is permitted to be run on the surface of wood joists without the use of mechanical protection?",
+    "wrong_answers": ["#10 AWG", "#8 AWG", "#4 AWG"],
+    "answer": "#6 AWG"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the outside diameter of a #8 RW-90 XLPE aluminum conductor?",
+    "wrong_answers": ["28.7 mm", "23.66 mm", "5.49 mm"],
+    "answer": "5.99 mm"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "When is bonding equipment to the grounded system neutral conductor permitted?",
+    "wrong_answers": ["Anywhere in the system", "When a system is resistance grounded", "For a pole-top lighting system"],
+    "answer": "On the supply side of the main service switch"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the maximum load in watts that is permitted to be connected to a 20 amp, 2-pole, circuit breaker that is fed from a 120/240 volt, single-phase, three wire service if #10/2 AC-90 cable is used as the conductors?",
+    "wrong_answers": ["4800 watts", "6000 watts", "5760 watts"],
+    "answer": "3840 watts"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What type of wiring method does a portable cord-connected, 2000 watt, 240 volt, electric heater require to connect it to an electrical supply?",
+    "wrong_answers": ["AC-90", "NMD-90", "RA-90"],
+    "answer": "SO"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "When is an inspection application to be filed with the inspection department?",
+    "wrong_answers": ["Within 48 hours of beginning electrical work on a commercial installation", "At the same time as work commences on the installation", "Within one week of commencing work on the installation"],
+    "answer": "At the same time that the permit is taken out"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "Your boss sent you to purchase some NMW-U cable to make-up a string of temporary lights for a construction site. What is the minimum size of conductor that you must purchase?",
+    "wrong_answers": ["#12 AWG copper", "#12 AWG aluminum", "#10 AWG copper"],
+    "answer": "#14 AWG copper"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the minimum distance from the outer surface of metal studs, joists or other similar metal members, when running armoured cables through them, before mechanical protection is required?",
+    "wrong_answers": ["50mm", "30mm", "25mm"],
+    "answer": "32mm"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "How far around a wire bending screw must an aluminum conductor extend to be properly terminated?",
+    "wrong_answers": ["Half-way", "Two-thirds", "All the way around"],
+    "answer": "Three-quarters"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "When mounting a device box to a metal stud, what is the maximum distance from the back or end of the box that the mounting screws can project into the box?",
+    "wrong_answers": ["3.2mm", "12.5mm", "25mm"],
+    "answer": "6.4mm"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the minimum thickness of boards when used to support a 4-gang switch box to wooden studs in a residential installation?",
+    "wrong_answers": ["13 mm", "25 mm", "40 mm"],
+    "answer": "19 mm"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the minimum bending radius for AC-90 cables?",
+    "wrong_answers": ["Six times the internal diameter", "Ten times the external diameter", "Ten time the internal diameter"],
+    "answer": "Six times the external diameter"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the maximum volume of box that can be supported by a raceway?",
+    "wrong_answers": ["1400 ml", "1550 ml", "1860 ml"],
+    "answer": "1640 ml"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "A heat pump rated 40 amps, 120 volts, single-phase is installed 40 meters away from the source of supply. What is the minimum size of R-90 XLPE conductors that are required to keep the voltage drop within code requirements?",
+    "wrong_answers": ["#10 R-9 XLPE", "#8 R-90 XLPE", "#6 R-90 XLPE"],
+    "answer": "#4 R-90 XLPE"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "There is a 24 volt emergency lighting circuit with a rating of 60 amp-hours at a maximum of 200 watts of connected load. What length of time can this system operate at maximum capacity?",
+    "wrong_answers": ["6.0 hours", "6.5 hours", "7.0 hours"],
+    "answer": "7.2 hours"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "A split AC motor has three leads. The leads are marked A, B and C. If the resistance readings between A and B = 525Ω, A and C = 775Ω, and B and C = 250Ω, which leads belong to the run winding?",
+    "wrong_answers": ["A and B", "A and C", "C and A"],
+    "answer": "B and C"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "A 3-phase capacitor bank is rated at 60 amps and 600 volts. What is the minimum size of 3-wire Teck-90 cable that can be used to supply this capacitor bank?",
+    "wrong_answers": ["#4/3 Teck-90", "#2/3 Teck-90", "#00/3 Teck-90"],
+    "answer": "#8/3 Teck-90"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the maximum rating of the overload relays that are used to protect a 40 Hp, 600 volt, 3-phase refrieration compressor?",
+    "wrong_answers": ["59.6 amps", "65.0 amps", "72.8 amps"],
+    "answer": "56.0 amps"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "Where is the proper location of the disconnecting means for an un-interruptible power supply to be when used to isolate the UPS from the building's power system?",
+    "wrong_answers": ["Between the UPS and the load", "Not required", "On the load side of the transfer switch"],
+    "answer": "On the supply side of the UPS"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the minimum size of conductor that is permitted to be installed in a run of PVC for a fire alarm system?",
+    "wrong_answers": ["#12 TW-75", "#14 R90 XLPE", "#18 GTF"],
+    "answer": "#16 TEW"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "When performing preventative maintenance on a reversing motor starter, you notice that a contactor is humming very loudly. What is the likely cause?",
+    "wrong_answers": ["The input voltage is too high", "The input voltage is too low", "The contractor has loose laminations"],
+    "answer": "The shaded pole is broken or missing"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What would be the result of your weld, if the mold you were using for a cadweld was damp or wet?",
+    "wrong_answers": ["The weld would be very shinny", "The weld woiuld be very smooth", "The weld would be normal"],
+    "answer": "The weld would be porous"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "If the peak voltage is 169.68 volts, what will an AC voltmeter read?",
+    "wrong_answers": ["108.07 volts", "110 volts", "169.68 volts"],
+    "answer": "120 volts"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "An electrical connection needs to be made to a portable motor, which type of equipment wire is required?",
+    "wrong_answers": ["Festoon", "Type GTF", "Type SJ"],
+    "answer": "Type S"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "The correct wiring method to be used for electrical equipment in a class 1 Zone 1 location must be:",
+    "wrong_answers": ["Rigid PVC", "NMW-U", "Festoon"],
+    "answer": "Threaded metal conduit"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "A welder has a duty cycle of 70% and an FLA of 32 amps. Calculate the minimum ampacity of the supply conductors for this welder as per code.",
+    "wrong_answers": ["40 amps", "32 amps", "25.6 amps"],
+    "answer": "26.88 amps"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "Three-way switches are required to control the light in a residential stairway:",
+    "wrong_answers": ["If there is a doorway in the basement", "If the switch is located more than 3.5 meters from the door", "Only if the stairway leads to another level in the house"],
+    "answer": "If there are 4 or more risers on the stairway"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the minimum ampacity of the conductors required to supply a 60 amp fusible switch from a 400 amp splitter if the tap conductor length is 4.5 meters?",
+    "wrong_answers": ["400 amps", "100 amps", "60 amps"],
+    "answer": "135 amps"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the minimum distance, that the termination point of the supply conductors must be, from any part of a 150 Hp motor?",
+    "wrong_answers": ["900 mm", "600 mm", "450 mm"],
+    "answer": "1200 mm"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the minimum temperature rating of the supply conductors for a 75 Hp, 575 volt, 3-phase, class 'F', totally enclosed non-ventilated, squirrel cage induction motor, connected 4Y?",
+    "wrong_answers": ["90° C", "75° C", "125° C"],
+    "answer": "110° C",
+    "erratta": "I refuse to believe half of these words are real"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What would happen if the centrifugal switch in a split-phase, 1-phase, capacitor start motor was stuck in the open position?",
+    "wrong_answers": ["The otor would start slowly in reverse", "The starting torque would be greatly reduced", "The motor would start but no current would flow to the start winding"],
+    "answer": "The motor would not start but current would flow to the run winding"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What ist he proper type of insulating tape to be used for overhead services, when making connections at the service head?",
+    "wrong_answers": ["Rubber splicing tape", "Standard vinyl electrical tape", "Weather-resistant epoxy coated tape"],
+    "answer": "Self-sealing thermoplastic tape"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the CSA configuration for a residential dryer receptacle?",
+    "wrong_answers": ["5-15R", "5-30R", "6-30R"],
+    "answer": "14-30R"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the minimum size of RW-90 XLPE (600 volt, unjacketed) conductors that are required for a 1000 amp, 120/208 volt, 3-phase service, if they are installed using detail 3 of Diagram B4-4 (crossed out -- says Diagram B11)?",
+    "wrong_answers": ["350 kcmil RW-90", "600 kcmil RW-90", "750 kcmil RW-90"],
+    "answer": "500 kcmil RW-90",
+    "erratta": "I have no idea what diagram this is referring to I hope this makes sense"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "Which of the following is not a requirement when installing deck boxes in close proximity to in-ground pools?",
+    "wrong_answers": ["Must be installed above the normal water level of the pool", "Must have provisions for 3 bond wires inside the box and 1-#6 AWG outside", "Must be installed so that the top of the box is level with the pool deck"],
+    "answer": "Must be installed on GFCI protected circuits only"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "When grounding a high-voltage outdoor station, what is the minimum number of ground rod electrodes necessary to complete the station ground electrode?",
+    "wrong_answers": ["One rod, 3m long and 19mm diameter", "Four rods, 3m long and 15.8mm diameter", "Two rods, 3m long and 19mm diameter"],
+    "answer": "Four rods, 3m long and 19mm diameter"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the inium size of ground wire required to connect the non-current carrying metal parts of a pothead to the station ground electrode?",
+    "wrong_answers": ["#2/0 AWG copper", "#3/0 AWG copper", "#6 AWG copper"],
+    "answer": "#4 AWG copper"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the main purpose of the semi-conducting tape used in a high-voltage stress cone?",
+    "wrong_answers": ["To bleed excess voltage to the ground", "To insulate the termination from the ground lead connection", "To relieve mechanical stress at the termination"],
+    "answer": "To determine the voltage rating of the stress cone"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the minimum size of ground wire required for the proper installation of a 1500 watt, 125 volt, heated livestock watering bowl in a feedlot?",
+    "wrong_answers": ["#14 AWG", "#12 AWG", "#10 AWG"],
+    "answer": "#6 AWG"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "Which of the following luminaires are permitted to be installed in a multi-purpose gymnasium?",
+    "wrong_answers": ["Standard 4' 2-lamp T8 flourescent wrap", "500 watt incandescent potlight", "400 watt HPS fixture with thermal protection"],
+    "answer": "Standard 8' 2 lamp T12 fluorescent with metal cage"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the minimum number of open breaker spaces that must be left for future use in a 100 amp, 120/240 volt, 1-phase residential panel?",
+    "wrong_answers": ["One", "Three", "Four"],
+    "answer": "Two"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the minimum width and thickness of a copper bonding strap, when used to bond a metal transformer enclosure?",
+    "wrong_answers": ["19mm wide and 1.4mm thick", "12mm wide and 1.2mm thick", "16mm wide and 1.6mm thick"],
+    "answer": "19mm wide and 1.2mm thick"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "When installing a 5-15R receptacle (single-phase 3-wire circuit) on a recreational vehicle lot, what should be the configuration of the ground pin (if the receptacle is ounted on a vertical plane)?",
+    "wrong_answers": ["Lowermost", "Doesn't matter", "Cannot be installed on a vertical plane"],
+    "answer": "Uppermost"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "Which of the following methods should be used when drying the windings of a distribution transformer?",
+    "wrong_answers": ["Shgort the secondary, apply primary voltage", "Short the primary, apply secondary voltage", "Short the secondary, apply secondary voltage to the primary"],
+    "answer": "Apply an appropriate amount of DC to the primary, short the secondary"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "Based on the readings given in the diagram, what is the problem?",
+    "wrong_answers": ["Line 2 fuse is blown", "Line 1 fuse is blown", "All three fuses are blown"],
+    "answer": "Line 3 fuse is blown",
+    "img": "/assets/images/c_of_q/volts_n_shit.png"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "Using the diagram, what is the minimum number of control wires that must be installed in conduit 'A' to control a hoist? The hoist can only move in the direction on the control station when the pushbutton is held closed.",
+    "wrong_answers": ["Three", "Five", "Nine"],
+    "answer": "Seven",
+    "img": "/assets/images/c_of_q/conduit_thing.png"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the maximum rating/setting of the overload devices that can be used to protect a 30Hp, 460 volt, 3-phase synchronous motor/generator with a marked service factor of 1.2?",
+    "wrong_answers": ["32.45 amps", "36.35 amps", "37.95 amps"],
+    "answer": "41.25 amps"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "Using the drawing, which set of contacts should be closed in order for the wound rotor motor to reach its maximum speed?",
+    "wrong_answers": ["Contact set 'B'", "Contact set 'C'", "Contact set 'D'"],
+    "answer": "Contact set 'A'",
+    "img": "/assets/images/c_of_q/big_weird_diagram.png"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "A single-phase commercial store service at 120/240 volts has an ammeter reading of 170 amps and a wattmeter reading of 36000 watts. What is the power factor of this service?",
+    "wrong_answers": ["94%", "82%", "70%"],
+    "answer": "88%"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "Four 600 volt, 3-phase induction motors are connected to a splitter. What is the minimum size of RW-90 XLPE conductors that fed the splitter if the motors have ratings of 20 Hp, 20 Hp, 15 Hp, and 10 Hp respectively?",
+    "wrong_answers": ["#6 AWG", "#3 AWG", "#2 AWG"],
+    "answer": "#4 AWG"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "hat is the maximum number of consumer services in a building that may be supplied from one 347/600 volt, 3-phase supply service?",
+    "wrong_answers": ["Only one", "Two", "Five"],
+    "answer": "Four"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "Using the diagram, which voltmeter will read 120 volts when the gas burner is deenergized?",
+    "wrong_answers": ["VM #2", "VM #3", "VM #1"],
+    "answer": "VM #7",
+    "img": "/assets/images/c_of_q/big_huge_diagram.png"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the minimum ground depth that an intermediate post must have when part of a fence installation around electrical equipment?",
+    "wrong_answers": ["1.1 meters", "1.5 meters", "2.0 meters"],
+    "answer": "1.0 meters"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the minimum size of 2 conductor AC-90 that must be used to supply 84 watts of remote heads for a 12 volt DC emergency lighting system, if the cable runs a distance of 50 meters?",
+    "wrong_answers": ["#10 AWG", "#8 AWG", "#6 AWG"],
+    "answer": "#4 AWG"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the requirement for transfer switches to supply fire pumps in a commercial building?",
+    "wrong_answers": ["One for each building", "One for every two fire pumps", "One for every three fire pumps"],
+    "answer": "One for each fire pump"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the purpose of the numbers on the right side of the ladder diagram at each horizontal line?",
+    "wrong_answers": ["Indicates the location of N.C. contacts", "Indicates wire numbers", "Indicates N.O. contacts"],
+    "answer": "Indicates the location of the contacts",
+    "img": "/assets/images/c_of_q/ladder.png"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the purpose of the CR1 normally open contact?",
+    "wrong_answers": ["Give error indication", "De-energize CR1 relay", "Add memory to the circuit"],
+    "answer": "Give correct sequence indication",
+    "img": "/assets/images/c_of_q/cr1_circuit.png"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "Using the diagram, select the statement that describes the sequence of events that takes place when FL1 is operative.",
+    "wrong_answers": ["When FL1 closes, CR3 is energized", "When FL1 opens, CR2 is activated", "When FL1 closes, PL3 is energized"],
+    "answer": "When FL1 floses, CR2 is activated",
+    "img": "/assets/images/c_of_q/fl1.png"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "A 1 1/2 HP motor A.C. refrigeration compressor operates on a 240 volt, 1-phase system. What is the maximum ampacity of the overcurrent device required to protect the motor compressor?",
+    "wrong_answers": ["15", "20", "40"],
+    "answer": "30"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the maximum rating of the overload devices that can be used to protect a 30 Hp, 460 V, 3-phase, S.F. 1.2 synchronous motor-generator?",
+    "wrong_answers": ["32.45 amp", "36.35 amp", "37.95 amp"],
+    "answer": "41.25 amp"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the maximum rating of the time delay fuses in the main disconnect for the following 3-phase 208 volt, 60 HZ motors? The motor sizes are: two 10 hp; one 7.5 hp; and three 5 hp.",
+    "wrong_answers": ["145 amp", "125 amp", "100 amp"],
+    "answer": "150 amp"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "A three-phase 2 HP AC fan motor rated at 208 volts, what is the maximum size of 3-pole circuit breaker that can be used?",
+    "wrong_answers": ["20 A", "30 A", "40 A"],
+    "answer": "15 A"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the minimum length of dimension 'X' when the motor is a 75 hp, 600 V, 3-phase squirrel cage motor used as a sump pump?",
+    "wrong_answers": ["450 mm", "1000 mm", "1200 mm"],
+    "answer": "600 mm",
+    "img": "/assets/images/c_of_q/sump_pump.png"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "A 20 hp, 3-phase, 600 volt squirrel-cage pump motor is to be connected by using an SOW cable, what is the minimum size of cable required?",
+    "wrong_answers": ["#14 AWG", "#12 AWG", "#10 AWG"],
+    "answer": "#8 AWG"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the minimum size of R90 (XLPE) conductor that can be installed in a run of threaded rigid metal conduit for a 30 hp, 460 V, 3-phase, S.F. 1.1 synchronous motor-generator?",
+    "wrong_answers": ["#12 AWG", "#10 AWG", "#6 AWG"],
+    "answer": "#8 AWG"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "A heat pump rated at 40 amps, 240 volts, 3-phase is installed 90 m from its supply. What is the minimum size of R90 (XLPE) conductor required, that would not allow more than a 3% voltage drop?",
+    "wrong_answers": ["#10", "#8", "#6"],
+    "answer": "#4"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "A grocery store is upgrading the size of their walk-in freezer and the refrigeration system along with it. The new 40 hp, 600 V, 3-phase compressor is installed with time-delay fuses as overcurrent protection; however upon completion of the installation the motor is blowing its fuses on start-up. What is the maximum time-delay fuse rating that can be used to correct this problem?",
+    "wrong_answers": ["160 amps", "110 amps", "70 amps"],
+    "answer": "150 amps"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "Four 600 V, 3-phase motots are connected through a splitter. What is the minimum size of RW90 conductor used to feed the disconnect which controls the splitter if the motors are rated at 15 HP, 15 HP, 10 HP, & 7.5 HP?",
+    "wrong_answers": ["10 AWG", "8 AWG", "4 AWG"],
+    "answer": "6 AWG"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "A motor is functioning properly through a Variable Frequency Drive (VFD). It suddenly stops. Where is the best place to lock off this motor?",
+    "wrong_answers": ["The motor", "The VFD", "The main service"],
+    "answer": "The main disconnect"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the minimum number of overload devices required for a 2 Hp, 600 V, 1-phase, dual capacitor motor?",
+    "wrong_answers": ["0", "2", "3"],
+    "answer": "1"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is one of the characteristics of a flat compound generator?",
+    "wrong_answers": ["No load voltage is less than the generated voltage", "No load voltage is equal to the generated voltage", "Load voltage is equal to the generated voltage"],
+    "answer": "Load voltage is less than the generated voltage"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "A hydrometer has a reading of 1.15. What is the condition of the battery being tested?",
+    "wrong_answers": ["Fully charged", "Half charged/drained", "Fully sulphurized"],
+    "answer": "Fully drained"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "How do you reverse a shaded pole motor?",
+    "wrong_answers": ["Interchange the supply leads", "Reverse the start and run winding leads", "Rotate the brushes 180°"],
+    "answer": "Take the motor apart and rotate the rotor shaft end for end"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "How many overload trip sensing units are required for the control equipment for a 5 Hp, 575 V, 2-phase squirrel-cage motor?",
+    "wrong_answers": ["0", "1", "3"],
+    "answer": "2"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the minimum number oif overload devices required for a 3 Hp, 240 V 1-phase capacitor-start, induction-run motor?",
+    "wrong_answers": ["0", "2", "3"],
+    "answer": "1"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "A motor being controlled by a PLC fails to start. During troubleshooting of the problem it was found that there is input to the PLC and output from the PLC. Upon further checking it is discovered that the motor starter contacts are closed. What could the problem be?",
+    "wrong_answers": ["Bad output module", "Bad input module", "Tripped overload"],
+    "answer": "No line voltage"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What type of fuse would you use if you were to replace a NEMA Type motor starter with an IEC Type Motor Starter?",
+    "wrong_answers": ["Type K", "Type P", "Type D"],
+    "answer": "Type J"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "Which of the following types of DC motors would not be used for belt drive applications?",
+    "wrong_answers": ["Series", "Shunt", "Long shunt compound"],
+    "answer": "Short shunt compound"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "The load requirement of a DC motor installation is for an extremely good speed regulation. If staritng torque is not important, what is the type of motor that should be used?",
+    "wrong_answers": ["Cumulative compound wound motor", "Differential compound wound motor", "Series motor"],
+    "answer": "Shunt motor"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "When more than one start button is required in a magnetic starter circuit, how should they be connected?",
+    "wrong_answers": ["In series with the holding contacfts", "Parallel with the stop button", "Parallle with the other stop buttons"],
+    "answer": "Parallel with the holding contacts"
   },
   {
     "type": "short_answer",
