@@ -1,6 +1,8 @@
 // targets c_of_q_practice.html
 document.addEventListener('DOMContentLoaded', () => {
 
+    let encouragement = ["u got this", "you're doing so good", "wowee you are (almost) an electrical master", "remember to drink water", "smile every day", "⚡ zip zap ⚡", "wow that question was ⚡shocking⚡", "n____n", "what even is electricity", "ohm-y god you're killin it", "should be journeywoman, amirite", "hot dads in ur area"];
+
     const startButton = document.getElementById("start_practice");
     const scoreHolderDiv = document.getElementById("score_holder");
     const questionContainer = document.getElementById("question");
@@ -14,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const shortAnswerNavigationDiv = document.getElementById("short_answer_nav");
     const shortAnswerCorrectButton = document.getElementById("correct");
     const shortAnswerIncorrectButton = document.getElementById("incorrect");
+    const encouragementDiv = document.getElementById("encouragement");
 
     let questions = [];
     let remainingQuestions = [];
@@ -234,6 +237,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 button.textContent = "Show answer";
                 button.addEventListener("click", () => showShortAnswer(button, selectedQuestion));
                 answersContainer.appendChild(button);
+            }
+
+            // set encouragement
+            if (n_total_answers > 0 && n_total_answers % 5 == 0) {
+                let randomEncouragement = encouragement[Math.floor(Math.random() * encouragement.length)];
+                encouragementDiv.innerText = `~~ ${randomEncouragement} ~~`;
             }
         }
     }
