@@ -3,13 +3,85 @@
     "type": "multiple_choice",
     "question": "You are installing a 100 HP, 600 volt, 3 phase pump motor with a service factor of 1.18. What is the maximum permissible size circuit breaker that may be installed?",
     "wrong_answers": ["110A", "125A", "250A"],
-    "correct_answer": "225A"
+    "answer": "225A"
   },
   {
     "type": "multiple_choice",
     "question": "The maximum number of 347V switches that may be installed in a device box without partitions?",
     "wrong_answers": ["2", "3", "4"],
-    "correct_answer": "1"
+    "answer": "1"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "A group of remote head emergency lights are to be installed from a 6V supply located 20 metres away. The total combined load is 8A. Using the maximum permitted voltage drop, what size of T90 conductor is required?",
+    "wrong_answers": ["#6", "#10", "#12"],
+    "answer": "#4"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "Two 2 inch conduits that contain 4/0 AWG T90 conductors enter the back of a 24 inch x 24 inch pull box. What is the minimum depth of the box?",
+    "wrong_answers": ["4 inches", "8 inches", "10 inches"],
+    "answer": "6 inches"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "Which of the folloing should be provided with a low voltage release?",
+    "wrong_answers": ["A punch press motor", "A saw motor", "A conveyor motor"],
+    "answer": "A refrigeration compressor"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the minimum size of TECK90 that can be used for a circuit of 347 V high pressure sodium luminaries being protected by a 20 A circuit breaker?",
+    "wrong_answers": ["# 14 AWG", "# 10 AWG", "# 8 AWG"],
+    "answer": "# 12 AWG"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the maximum number of 25 W outlets allowed to be installed on a circuit used for aisle lights located under seats in a movie theatre?",
+    "wrong_answers": ["10", "12", "20"],
+    "answer": "30"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the purpose of a stress relief cone?",
+    "wrong_answers": ["To reduce and control mechanical stress on a high voltage termination", "To reduce and control mechanical stress on a low voltage installation", "To reduce and suppress electrical arcs"],
+    "answer": "To reduce and control electrical stress on a high voltage termination"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What is the proper rating of the receptacle and plug for a cord connected transformer arc welder?",
+    "wrong_answers": ["Shall be less than the ampacity of the supply conductors", "Shall be greater than the ampacity of the over current device", "Shall be both less than the ampacity of the supply conductors and greater than the ampacity of the over current device"],
+    "answer": "Shall be not less than the supply conductors"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "You are installing a 100 HP, 600 volt, 3 phase pump motor with a service factor of 1.18. What is the minimum size RW90XLPE required if the conductors are run in conduit?",
+    "wrong_answers": ["# 2 AWG", "# 3 AWG", "0 AWG"],
+    "answer": "# 1 AWG"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "How often do emergency systems need to be tested?",
+    "wrong_answers": ["Daily", "Weekly", "Yearly"],
+    "answer": "Monthly"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "You are installing a 600 volt 3 phase capacitor with a current rating of 14.5 A. What is the maximum circuit breaker that must be installed for normal operation?",
+    "wrong_answers": ["15 A", "50 A", "90 A"],
+    "answer": "30 A"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "",
+    "wrong_answers": ["", "", ""],
+    "answer": ""
+  },
+  {
+    "type": "multiple_choice",
+    "question": "",
+    "wrong_answers": ["", "", ""],
+    "answer": ""
   },
   {
     "type": "short_answer",

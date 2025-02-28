@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const scoreButtonToggle = document.getElementById("toggle_score");
     const scoreDiv = document.getElementById("score");
     const restartButton = document.getElementById("restart");
+    const endNowButton = document.getElementById("end_now");
     const shortAnswerNavigationDiv = document.getElementById("short_answer_nav");
     const shortAnswerCorrectButton = document.getElementById("correct");
     const shortAnswerIncorrectButton = document.getElementById("incorrect");
@@ -18,6 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let n_correct_answers = 0;
     let n_total_answers = 0;
+
+    let wrong_questions = [];
 
     async function loadQuestions() {
         try {
@@ -80,16 +83,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Multiple choice questions 
-    function checkAnswer(button, selected_answer, correct_answer) {
+    function checkAnswer(button, selected_answer, question) {
         const buttons = answersContainer.querySelectorAll("button");
 
-        if (selected_answer === correct_answer) {
+        if (selected_answer === question.answer) {
             button.style.background = "rgb(154, 226, 72)";
             button.style.color = "black";
             n_correct_answers += 1;
         } else {
             button.style.background = "rgb(226, 85, 72)";
             button.style.color = "black";
+            wrong_questions.push(question);
         }
 
         buttons.forEach(btn => {
@@ -97,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.style.cursor = "default";
             btn.removeEventListener("click", checkAnswer);
 
-            if (btn.textContent === correct_answer) {
+            if (btn.textContent === question.answer) {
                 btn.style.background = "rgb(154, 226, 72)";
                 btn.style.color = "black";
             }
@@ -109,10 +113,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Short answer questions
-    function showShortAnswer(button, answer) {
+    function showShortAnswer(button, question) {
         button.remove();
         const answerDiv = document.createElement("div");
-        answerDiv.textContent = answer;
+        answerDiv.textContent = question.answer;
         answerDiv.style.color = "white";
         answerDiv.style.fontSize = "1.5em";
         answerDiv.style.border = "2px solid rgb(154, 226, 72)";
@@ -120,25 +124,72 @@ document.addEventListener('DOMContentLoaded', () => {
         answerDiv.style.padding = "10px";
         answersContainer.appendChild(answerDiv);
         shortAnswerNavigationDiv.style.display = "flex";
+
+        shortAnswerCorrectButton.addEventListener("click", function () {
+            incrementScore(correct = true, question);
+        });
+
+        shortAnswerIncorrectButton.addEventListener("click", function () {
+            incrementScore(correct = false, question);
+        });
     }
 
-    function incrementScore(n_correct) {
-        n_correct_answers += n_correct;
+    function incrementScore(correct, question) {
+        if (correct == true) {
+            n_correct_answers += 1;
+        } else {
+            wrong_questions.push(question);
+        }
         n_total_answers += 1;
         updateScore();
         getRandomQuestion();
+    }
+
+    function showResults() {
+        clearQuestion();
+        let correct_answers_proportion = Math.round(n_correct_answers / n_total_answers * 100);
+        let pass_fail = correct_answers_proportion >= 70 ? "passed!!!!" : "failed :( But try again, you got this!!"
+        questionContainer.innerText = `Finished -- You ${pass_fail}`;
+        if (scoreButtonToggle.innerText == "Show score") {
+            toggleScoreButton();
+        }
+
+        endNowButton.remove();
+        scoreButtonToggle.remove();
+
+        const wrongQuestionsDiv = document.createElement("div");
+        wrongQuestionsDiv.classList.add("flexbox-columns");
+        let wrongQuestionsHeader = document.createElement("h4");
+        wrongQuestionsHeader.innerText = "Questions you got wrong";
+        wrongQuestionsHeader.style.marginBottom = "0px";
+        wrongQuestionsDiv.appendChild(wrongQuestionsHeader);
+        wrong_questions.forEach(function (question) {
+            let questionDiv = document.createElement("div");
+            questionDiv.classList.add("flexbox-container");
+            questionDiv.style.border = "1px solid rgb(226, 85, 72)";
+            questionDiv.style.borderRadius = "8px";
+            questionDiv.style.padding = "10px";
+            let questionContentsDiv = document.createElement("div");
+            questionContentsDiv.innerText = question.question;
+            questionContentsDiv.style.flex = 3;
+            questionContentsDiv.style.fontSize = "0.7em";
+            questionContentsDiv.style.color = "white";
+            let questionAnswer = document.createElement("div");
+            questionAnswer.innerText = question.answer;
+            questionAnswer.style.flex = 1;
+            questionAnswer.style.fontSize = "0.7em";
+            questionDiv.appendChild(questionContentsDiv);
+            questionDiv.appendChild(questionAnswer);
+            wrongQuestionsDiv.appendChild(questionDiv);
+        });
+        questionContainer.appendChild(wrongQuestionsDiv);
     }
 
     function getRandomQuestion() {
         clearQuestion();
 
         if (remainingQuestions.length === 0) {
-            let correct_answers_proportion = Math.round(n_correct_answers / n_total_answers * 100);
-            let pass_fail = correct_answers_proportion >= 70 ? "passed!!!!" : "failed :( But try again, you got this!!"
-            questionContainer.innerText = `Finished all questions -- You ${pass_fail}`;
-            if (scoreButtonToggle.innerText == "Show score") {
-                toggleScoreButton();
-            }
+            showResults();
         } else {
             const randomIndex = Math.floor(Math.random() * remainingQuestions.length);
             const selectedQuestion = remainingQuestions.splice(randomIndex, 1)[0];
@@ -146,19 +197,19 @@ document.addEventListener('DOMContentLoaded', () => {
             questionContainer.innerText = selectedQuestion.question;
 
             if (selectedQuestion.type == "multiple_choice") {
-                let answers = selectedQuestion.wrong_answers.concat([selectedQuestion.correct_answer]);
+                let answers = selectedQuestion.wrong_answers.concat([selectedQuestion.answer]);
                 answers = shuffleAnswers(answers);
 
                 answers.forEach(answer => {
                     const button = document.createElement("button");
                     button.textContent = answer;
-                    button.addEventListener("click", () => checkAnswer(button, answer, selectedQuestion.correct_answer));
+                    button.addEventListener("click", () => checkAnswer(button, answer, selectedQuestion));
                     answersContainer.appendChild(button);
                 });
             } else if (selectedQuestion.type == "short_answer") {
                 const button = document.createElement("button");
                 button.textContent = "Show answer";
-                button.addEventListener("click", () => showShortAnswer(button, selectedQuestion.answer));
+                button.addEventListener("click", () => showShortAnswer(button, selectedQuestion));
                 answersContainer.appendChild(button);
             }
         }
@@ -180,15 +231,11 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleScoreButton();
     });
 
+    endNowButton.addEventListener("click", function () {
+        showResults();
+    });
+
     restartButton.addEventListener("click", function () {
         location.reload();
     })
-
-    shortAnswerCorrectButton.addEventListener("click", function () {
-        incrementScore(1);
-    });
-
-    shortAnswerIncorrectButton.addEventListener("click", function () {
-        incrementScore(0);
-    });
 });
