@@ -721,7 +721,7 @@
   },
   {
     "type": "multiple_choice",
-    "question": "hat is the maximum number of consumer services in a building that may be supplied from one 347/600 volt, 3-phase supply service?",
+    "question": "What is the maximum number of consumer services in a building that may be supplied from one 347/600 volt, 3-phase supply service?",
     "wrong_answers": ["Only one", "Two", "Five"],
     "answer": "Four"
   },
@@ -1052,7 +1052,7 @@
   },
   {
     "type": "multiple_choice",
-    "question": "A TENV motor with a class F insulation rating must be connected ith a conductor having what minimum insulation temperature rating in an area with an ambient temperature of 40°C?",
+    "question": "A TENV motor with a class F insulation rating must be connected with a conductor having what minimum insulation temperature rating in an area with an ambient temperature of 40°C?",
     "wrong_answers": ["90°C", "100°C", "110°C"],
     "answer": "120°C"
   },
