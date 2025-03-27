@@ -36,6 +36,23 @@ hr {
     border-top: 1px solid rgb(57, 20, 116);
 }
 
+table {
+    border: 2px solid rgb(75, 89, 193);
+    border-radius: 5px;
+    width: 100%;
+    text-align: left;
+    font-family: monospace, monospace;
+}
+
+th {
+    text-decoration: underline;
+}
+
+td,
+th {
+    padding: 0 15px;
+}
+
 button {
     color: rgb(168, 177, 243);
     background: rgb(57, 20, 116);
@@ -105,6 +122,31 @@ button:hover {
     height: 36px;
     stroke: rgb(104, 116, 204);
     fill: none;
+}
+
+/* Image next to text */
+.img-and-text {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.img-and-text>div,
+.img_and_text>img {
+    flex: 1;
+}
+
+.img-and-text>img {
+    height: auto;
+    max-width: 60%;
+    object-fit: contain;
+}
+
+@media (max-width: 650px) {
+    .img-and-text>img {
+        max-width: 100%;
+    }
 }
 
 /* Books */
