@@ -46,6 +46,7 @@ body::before {
     left: -100%;
     opacity: 0;
   }
+
   100% {
     left: 820px;
     opacity: 1;
@@ -55,11 +56,11 @@ body::before {
 }
 
 .half-circle {
-    width: 200px;
-    height: 100px;
-    background-color: rgb(241, 26, 79);
-    border-top-left-radius: 110px;
-    border-top-right-radius: 110px;
-    border: 10px solid rgb(241, 26, 79);
-    border-bottom: 0;
+  width: 200px;
+  height: 100px;
+  background-color: rgb(241, 26, 79);
+  border-top-left-radius: 110px;
+  border-top-right-radius: 110px;
+  border: 10px solid rgb(241, 26, 79);
+  border-bottom: 0;
 }

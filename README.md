@@ -6,7 +6,7 @@ A sandbox for Heather's personal projects.
 
 ## Local dev / deployment
 
-Run `make local` to start the nginx server with built files mounted. The website will be accessible at localhost.
+Run `make local` to start the nginx server with built files mounted. The website will be accessible at localhost (port 80).
 
 Since components are injected during build, we can't directly mount the src directory to the local image; instead, the `make local` step first runs `make build` to build the HTML files, and the `build` directory is mounted. To have fresh changes reflected at localhost, you must therefore run `make build` again to get changes pulled in to the `build` directory (you can run this in another terminal while the local image is running).
 
@@ -74,7 +74,7 @@ Some things to note:
 
 1. Create the page somewhere in src/; must end in `.html`
 2. Add a link to the page in [the navbar](src/html/components/navbar.html). The href value will be what shows up in the navbar, and should start with a `/`. This is the `<href_value>`  used in step 3.
-3. Add a route to the page you set in the navbar in [the nginx conf file](ehatherward.dev.conf) in the format:
+3. Add a route to the page you set in the navbar in [the nginx conf file](heatherward.dev.conf) in the format:
 
 ```ini
     location <href_value> {

@@ -130,6 +130,7 @@ button:hover {
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 15px;
+    padding: 15px 0;
 }
 
 .img-and-text>div,
@@ -145,6 +146,28 @@ button:hover {
 
 @media (max-width: 650px) {
     .img-and-text>img {
+        max-width: 100%;
+    }
+}
+
+/* Two images side by side */
+.img-pair {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 15px 0;
+}
+
+.img-pair>img {
+    flex: 1;
+    height: auto;
+    max-width: 48%;
+    object-fit: contain;
+}
+
+@media (max-width: 650px) {
+    .img-pair>img {
         max-width: 100%;
     }
 }
