@@ -8,6 +8,14 @@ A sandbox for Heather's personal projects.
 
 Run `make local` to start the nginx server with built files mounted. The website will be accessible at localhost (port 80).
 
+### Installation
+
+```bash
+python3 -m pip install beautifulsoup4==4.12.3 lxml==5.3.0
+```
+
+### Enabling autobuild of components
+
 Since components are injected during build, we can't directly mount the src directory to the local image; instead, the `make local` step first runs `make build` to build the HTML files, and the `build` directory is mounted. To have fresh changes reflected at localhost, you must therefore run `make build` again to get changes pulled in to the `build` directory (you can run this in another terminal while the local image is running).
 
 To have the build happen automatically on save rather than needing to run it in the terminal every time you make changes, it's recommended to install the "Run on Save" vscode extension, with the following profile:
