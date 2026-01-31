@@ -64,6 +64,9 @@ function fillSlot(slot, card) {
   } else {
     img.classList.remove('card-reversed');
   }
+  img.classList.remove('drawing');
+  void img.offsetWidth;
+  img.classList.add('drawing');
 
   slot.querySelector('.spread-keywords').textContent = keywords.join('; ');
   slot.querySelector('.spread-description').innerHTML = description || '';
@@ -186,16 +189,18 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('click', async (e) => {
-  if (e.target.classList.contains('draw-card-button')) {
+  const drawButton = e.target.closest('.draw-card-button');
+  if (drawButton) {
     hideCardPicker();
-    const slot = e.target.closest('.spread-card-slot');
+    const slot = drawButton.closest('.spread-card-slot');
     if (slot) {
       await drawCard(slot);
     }
   }
 
-  if (e.target.classList.contains('select-card-button')) {
-    const slot = e.target.closest('.spread-card-slot');
+  const selectButton = e.target.closest('.select-card-button');
+  if (selectButton) {
+    const slot = selectButton.closest('.spread-card-slot');
     if (slot) {
       showCardPicker(slot);
     }

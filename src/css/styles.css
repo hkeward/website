@@ -131,6 +131,11 @@ button:hover {
 
 .reset-spread-button {
     cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.reset-spread-button:hover {
+    transform: rotate(-120deg);
 }
 
 /* Image next to text */
@@ -331,6 +336,10 @@ button:hover {
 }
 
 /* Tarot spread pages */
+.spread-page {
+    overflow-y: scroll;
+}
+
 .spread-header {
     display: flex;
     flex-wrap: wrap;
@@ -343,6 +352,7 @@ button:hover {
     order: 2;
     flex: 1;
     text-align: center;
+    margin: 0.2em;
 }
 
 .spread-header a {
@@ -367,20 +377,93 @@ button:hover {
 .spread-container {
     justify-content: space-around;
     flex-wrap: wrap;
-    gap: 15px;
 }
 
 .spread-card-slot {
     display: flex;
     flex-direction: column;
-    flex: 1;
-    min-width: 150px;
+    flex: 1 1 150px;
     max-width: 250px;
-    overflow: hidden;
+}
+
+.draw-card-button {
+    width: 100%;
+    aspect-ratio: 25/44;
+    margin-bottom: 1em;
+    border-radius: 15px;
+    background: unset;
+    border: 3px double rgb(75, 89, 193);
+}
+
+.draw-card-button:hover {
+    background: rgb(2, 2, 39);
+    color: rgb(168, 177, 243);
+}
+
+.draw-card-button svg {
+    width: 30%;
+    height: 30%;
+}
+
+.draw-card-button:hover svg {
+    animation: twinkle 3s linear infinite;
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotate(360deg);
+    }
 }
 
 .spread-card-slot .card-image {
     width: 100%;
-    aspect-ratio: 2/3;
-    object-fit: contain;
+    aspect-ratio: 25/44;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.card-image.drawing {
+    animation: card-draw 0.5s ease-out;
+}
+
+.card-image.drawing.card-reversed {
+    animation: card-draw-reversed 0.5s ease-out;
+}
+
+@keyframes card-draw {
+    from {
+        transform: scale(3) rotate(30deg);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes card-draw-reversed {
+    from {
+        transform: scale(3) rotate(210deg);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1) rotate(180deg);
+        opacity: 1;
+    }
+}
+
+.slot-label {
+    text-align: center;
 }

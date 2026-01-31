@@ -67,6 +67,9 @@ def clean_svg(svg_file):
         if "fill:none" in style or "fill: none" in style:
             is_filled = False
             break
+        path_fill = path.get("fill")
+        if path_fill and path_fill != "none":
+            is_filled = True
     if is_filled:
         svg_content["class"] = ["icon-filled"]
 
