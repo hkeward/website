@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div>
+    <template id="spread-slot-template">
+      <div class="spread-card-slot">
+        <div>
+          <h2 class="slot-label"></h2>
+        </div>
+        <div class="slot-empty">
+          <button class="draw-card-button">Draw</button>
+          <button class="select-card-button">Select</button>
+        </div>
+        <div class="slot-filled">
+          <div class="spread-card flexbox-columns">
+            <img class="card-image">
+            <h3 class="card-name"></h3>
+            <div><i class="orientation"></i></div>
+            <div class="spread-keywords"></div>
+            <div class="spread-description"></div>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <div class="card-picker-overlay" style="display: none;">
+      <div class="card-picker">
+        <h3>Select a card</h3>
+        <select class="card-picker-select">
+          <option value="">-- Choose a card --</option>
+        </select>
+        <div class="card-picker-orientation">
+          <label><input type="radio" name="orientation" value="upright" checked>Upright</label>
+          <label><input type="radio" name="orientation" value="reversed">Reversed</label>
+        </div>
+        <div class="card-picker-buttons">
+          <button class="card-picker-confirm">Confirm</button>
+          <button class="card-picker-cancel">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

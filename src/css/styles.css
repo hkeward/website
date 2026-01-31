@@ -124,6 +124,15 @@ button:hover {
     fill: none;
 }
 
+.icon-filled {
+    fill: rgb(104, 116, 204);
+    stroke: none;
+}
+
+.reset-spread-button {
+    cursor: pointer;
+}
+
 /* Image next to text */
 .img-and-text {
     display: flex;
@@ -266,6 +275,19 @@ button:hover {
     flex: 1;
 }
 
+.tarot-spread {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+    color: rgb(250, 197, 52);
+    text-decoration: none;
+    padding: 20px;
+    border-radius: 25px;
+    border: 3px double rgb(250, 197, 52);
+    flex: 1;
+}
+
 /* Tarot suit pages */
 .tarot-card h2 {
     margin: 0;
@@ -303,6 +325,62 @@ button:hover {
     transform: rotate(180deg);
 }
 
+
 .reversed {
     display: none;
+}
+
+/* Tarot spread pages */
+.spread-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.spread-header h1 {
+    order: 2;
+    flex: 1;
+    text-align: center;
+}
+
+.spread-header a {
+    margin: 1.34em 0;
+}
+
+.spread-header a:has(.reset-spread-button) {
+    order: 3;
+}
+
+@media (max-width: 500px) {
+    .spread-header h1 {
+        order: 3;
+        flex: none;
+    }
+
+    .spread-header a:has(.reset-spread-button) {
+        order: 2;
+    }
+}
+
+.spread-container {
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.spread-card-slot {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 150px;
+    max-width: 250px;
+    overflow: hidden;
+}
+
+.spread-card-slot .card-image {
+    width: 100%;
+    aspect-ratio: 2/3;
+    object-fit: contain;
 }
