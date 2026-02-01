@@ -129,15 +129,6 @@ button:hover {
     stroke: none;
 }
 
-.reset-spread-button {
-    cursor: pointer;
-    transition: transform 0.2s ease;
-}
-
-.reset-spread-button:hover {
-    transform: rotate(-120deg);
-}
-
 /* Image next to text */
 .img-and-text {
     display: flex;

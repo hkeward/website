@@ -240,6 +240,12 @@ def inject_components(
                 icon_content = copy.deepcopy(icons[icon_name])
                 original_classes = icon_content.get("class", [])
                 icon_content["class"] = class_list + [c for c in original_classes if c not in class_list]
+
+                # Preserve <title> element from original SVG if present
+                original_title = el.find("title")
+                if original_title:
+                    icon_content.insert(0, copy.copy(original_title))
+
                 el.replace_with(icon_content)
 
     with open(target_file, "w") as f:

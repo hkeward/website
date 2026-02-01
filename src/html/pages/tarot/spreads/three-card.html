@@ -10,14 +10,16 @@
 </head>
 
 <body class="spread-page">
-  <div class="flexbox-columns full-page">
+  <div class="flexbox-columns full-page" style="gap: 0">
     <div class="spread-header">
       <a href="/tarot"><svg class="icon-back"></svg></a>
       <a><svg class="icon-reset-svgrepo-com reset-spread-button"></svg></a>
       <h1>Three card spread</h1>
     </div>
-    <!-- Including this div enables the spread-slot-placeholders below to be filled using spread-tarot-card.html  -->
+
+    <!-- Enables spread-slot-placeholders to be filled using spread-tarot-card.html -->
     <div id="spread-tarot-card"></div>
+
     <div class="flexbox-container spread-container">
       <div class="spread-slot-placeholder" data-label="Past"></div>
       <div class="spread-slot-placeholder" data-label="Present"></div>

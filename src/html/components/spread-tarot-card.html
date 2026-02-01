@@ -8,55 +8,69 @@
 
 <body>
   <div>
-    <template id="element-icon-air"><svg class="icon-air element-icon"></svg></template>
-    <template id="element-icon-water"><svg class="icon-water element-icon"></svg></template>
-    <template id="element-icon-fire"><svg class="icon-fire element-icon"></svg></template>
-    <template id="element-icon-earth"><svg class="icon-earth element-icon"></svg></template>
+    <!-- Icon Templates -->
+    <template id="element-icon-air"><svg class="icon-air element-icon">
+        <title>Air</title>
+      </svg></template>
+    <template id="element-icon-water"><svg class="icon-water element-icon">
+        <title>Water</title>
+      </svg></template>
+    <template id="element-icon-fire"><svg class="icon-fire element-icon">
+        <title>Fire</title>
+      </svg></template>
+    <template id="element-icon-earth"><svg class="icon-earth element-icon">
+        <title>Earth</title>
+      </svg></template>
     <template id="reverse-toggle-icon"><svg class="icon-reset-svgrepo-com reverse-toggle"></svg></template>
     <template id="edit-card-icon"><svg class="icon-edit-3-svgrepo-com edit-card-btn"></svg></template>
 
+    <!-- Spread Slot Template -->
     <template id="spread-slot-template">
       <div class="spread-card-slot">
         <div>
           <h2 class="slot-label"></h2>
         </div>
+        <!-- Empty State -->
         <div class="slot-empty flexbox-columns">
           <div class="card-action-button">
+            <!-- Default View -->
             <div class="card-action-default">
               <div class="draw-card-button"><svg class="icon-stars-03-svgrepo-com"></svg></div>
               <div class="search-card-button"><svg class="icon-major-arcana"></svg></div>
             </div>
+            <!-- Search View -->
             <div class="card-action-search" style="display: none;">
               <div class="search-header">
                 <div class="search-back-button"><svg class="icon-back"></svg></div>
                 <div class="search-draw-button"><svg class="icon-stars-03-svgrepo-com"></svg></div>
               </div>
               <div class="suit-list">
-                <button class="suit-button" data-suit="Major Arcana"><svg class="icon-major-arcana"></svg><span>Major Arcana</span></button>
+                <button class="suit-button" data-suit="Major Arcana"><svg class="icon-major-arcana"></svg><span>Major
+                    Arcana</span></button>
                 <button class="suit-button" data-suit="Wands"><svg class="icon-fire"></svg><span>Wands</span></button>
                 <button class="suit-button" data-suit="Cups"><svg class="icon-water"></svg><span>Cups</span></button>
                 <button class="suit-button" data-suit="Swords"><svg class="icon-air"></svg><span>Swords</span></button>
-                <button class="suit-button" data-suit="Pentacles"><svg class="icon-earth"></svg><span>Pentacles</span></button>
+                <button class="suit-button" data-suit="Pentacles"><svg
+                    class="icon-earth"></svg><span>Pentacles</span></button>
               </div>
               <div class="card-list"></div>
             </div>
           </div>
         </div>
+        <!-- Filled State -->
         <div class="slot-filled">
           <div class="spread-card flexbox-columns tarot-card">
-            <img class="card-image">
+            <img class="card-image" src="" alt="">
             <div class="card-name-row">
               <h2 class="card-name"></h2>
             </div>
-            <div><i class="orientation"></i></div>
             <div class="spread-elements"></div>
-            <div class="spread-keywords"></div>
+            <div><strong class="spread-keywords"></strong></div>
             <div class="spread-description"></div>
           </div>
         </div>
       </div>
     </template>
-
   </div>
 </body>
 
