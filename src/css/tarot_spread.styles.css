@@ -32,10 +32,6 @@
     flex: 2;
     margin: 0.2em;
     text-align: center;
-}
-
-.spread-header h1,
-.slot-label {
     background: rgb(97, 197, 151);
     color: black;
     border-radius: 15px;
@@ -371,25 +367,31 @@
    ========================================================================== */
 
 .card-name-row {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    justify-content: space-between;
     box-sizing: border-box;
     width: 100%;
     padding: 4px 10px;
     border-radius: 15px;
     background: rgb(75, 89, 193);
     transition: background 0.2s ease;
+    min-height: 76px;
+}
+
+.card-name-row .spread-elements {
+    justify-self: start;
+    margin-left: 5px;
 }
 
 .card-name-row .card-name {
-    flex: 1;
+    justify-self: center;
     margin: 0;
     text-align: center;
 }
 
 .card-name-row .edit-card-btn {
-    flex-shrink: 0;
+    justify-self: end;
     width: 18px;
     height: 18px;
     opacity: 0;
@@ -411,8 +413,17 @@
 
 .spread-elements {
     display: flex;
+    align-items: center;
     justify-content: flex-start;
     gap: 5px;
+}
+
+.element-wrapper {
+    display: flex;
+}
+
+.element-wrapper .element-icon {
+    stroke: rgb(157, 166, 233);
 }
 
 /* Keywords

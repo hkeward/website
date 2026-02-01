@@ -403,7 +403,7 @@ document.addEventListener('click', async event => {
     return;
   }
 
-  const resetButton = target.closest('.reset-spread-button');
+  const resetButton = target.closest('a:has(.reset-spread-button)') || target.closest('.reset-spread-button');
   if (resetButton) {
     handleResetButton();
   }
