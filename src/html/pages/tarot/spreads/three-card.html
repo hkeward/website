@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Three card spread</title>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+  <link rel="stylesheet" type="text/css" href="/css/tarot_spread.styles.css">
+</head>
+
+<body class="spread-page">
+  <div class="flexbox-columns full-page" style="gap: 0">
+    <div class="spread-header">
+      <a href="/tarot"><svg class="icon-back"></svg></a>
+      <a><svg class="icon-reset-svgrepo-com reset-spread-button"></svg></a>
+      <h1>Three card spread</h1>
+    </div>
+
+    <!-- Enables spread-slot-placeholders to be filled using spread-tarot-card.html -->
+    <div id="spread-tarot-card"></div>
+
+    <div class="flexbox-container spread-container">
+      <div class="spread-slot-placeholder" data-label="Past"></div>
+      <div class="spread-slot-placeholder" data-label="Present"></div>
+      <div class="spread-slot-placeholder" data-label="Future"></div>
+    </div>
+
+    <div id="footer"></div>
+  </div>
+</body>
+
+</html>

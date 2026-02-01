@@ -124,6 +124,11 @@ button:hover {
     fill: none;
 }
 
+.icon-filled {
+    fill: rgb(104, 116, 204);
+    stroke: none;
+}
+
 /* Image next to text */
 .img-and-text {
     display: flex;
@@ -266,6 +271,19 @@ button:hover {
     flex: 1;
 }
 
+.tarot-spread {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+    color: rgb(250, 197, 52);
+    text-decoration: none;
+    padding: 20px;
+    border-radius: 25px;
+    border: 3px double rgb(250, 197, 52);
+    flex: 1;
+}
+
 /* Tarot suit pages */
 .tarot-card h2 {
     margin: 0;
@@ -302,6 +320,7 @@ button:hover {
 .card-reversed {
     transform: rotate(180deg);
 }
+
 
 .reversed {
     display: none;

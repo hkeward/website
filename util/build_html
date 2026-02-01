@@ -38,7 +38,8 @@ def clean_svg(svg_file):
     for element in ["id", "height", "width"]:
         if element in svg_content.attrs:
             del svg_content.attrs[element]
-    svg_content["viewbox"] = "0 0 24 24"
+    if "viewbox" not in svg_content.attrs and "viewBox" not in svg_content.attrs:
+        svg_content["viewbox"] = "0 0 24 24"
 
     if "xmlns:svg" in svg_content.attrs:
         del svg_content.attrs["xmlns:svg"]
@@ -59,6 +60,18 @@ def clean_svg(svg_file):
                 )
             ]
             element["style"] = ";".join(filtered_style)
+
+    is_filled = svg_content.get("fill") not in (None, "none")
+    for path in svg_content.find_all("path"):
+        style = path.get("style", "")
+        if "fill:none" in style or "fill: none" in style:
+            is_filled = False
+            break
+        path_fill = path.get("fill")
+        if path_fill and path_fill != "none":
+            is_filled = True
+    if is_filled:
+        svg_content["class"] = ["icon-filled"]
 
     return svg_content
 
@@ -225,7 +238,14 @@ def inject_components(
                 )
             else:
                 icon_content = copy.deepcopy(icons[icon_name])
-                icon_content["class"] = class_list
+                original_classes = icon_content.get("class", [])
+                icon_content["class"] = class_list + [c for c in original_classes if c not in class_list]
+
+                # Preserve <title> element from original SVG if present
+                original_title = el.find("title")
+                if original_title:
+                    icon_content.insert(0, copy.copy(original_title))
+
                 el.replace_with(icon_content)
 
     with open(target_file, "w") as f:
@@ -275,6 +295,18 @@ def main(args):
             elif fname == "tarot.json":
                 with open(os.path.join(source_dir, fname), "r") as f:
                     tarot_data = json.load(f)
+                relpath = os.path.join(
+                    source_dir.replace(args.src_directory, ""), fname
+                )
+                files.append(
+                    {
+                        "source_file": os.path.join(source_dir, fname),
+                        "target_file": os.path.join(
+                            args.build_directory, relpath.lstrip("/")
+                        ),
+                        "relpath": relpath,
+                    }
+                )
             else:
                 relpath = os.path.join(
                     source_dir.replace(args.src_directory, ""), fname
