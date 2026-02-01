@@ -43,7 +43,7 @@
   "seven-of-swords": {
     "card_name": "Seven of Swords",
     "suit": "Swords",
-    "elements": [],
+    "elements": ["air"],
     "img": "/assets/images/tarot/swords/seven_of_swords.png",
     "symbolism": {"guy carrying way too many swords": "James"},
     "keywords": ["Impulsiveness", "Spontaneity", "Evasion", "Trust issues"],

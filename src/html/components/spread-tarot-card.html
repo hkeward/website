@@ -8,20 +8,48 @@
 
 <body>
   <div>
+    <template id="element-icon-air"><svg class="icon-air element-icon"></svg></template>
+    <template id="element-icon-water"><svg class="icon-water element-icon"></svg></template>
+    <template id="element-icon-fire"><svg class="icon-fire element-icon"></svg></template>
+    <template id="element-icon-earth"><svg class="icon-earth element-icon"></svg></template>
+    <template id="reverse-toggle-icon"><svg class="icon-reset-svgrepo-com reverse-toggle"></svg></template>
+    <template id="edit-card-icon"><svg class="icon-edit-3-svgrepo-com edit-card-btn"></svg></template>
+
     <template id="spread-slot-template">
       <div class="spread-card-slot">
         <div>
           <h2 class="slot-label"></h2>
         </div>
         <div class="slot-empty flexbox-columns">
-          <button class="draw-card-button"><svg class="icon-stars-03-svgrepo-com"></svg></button>
-          <button class="select-card-button">Select</button>
+          <div class="card-action-button">
+            <div class="card-action-default">
+              <div class="draw-card-button"><svg class="icon-stars-03-svgrepo-com"></svg></div>
+              <div class="search-card-button"><svg class="icon-major-arcana"></svg></div>
+            </div>
+            <div class="card-action-search" style="display: none;">
+              <div class="search-header">
+                <div class="search-back-button"><svg class="icon-back"></svg></div>
+                <div class="search-draw-button"><svg class="icon-stars-03-svgrepo-com"></svg></div>
+              </div>
+              <div class="suit-list">
+                <button class="suit-button" data-suit="Major Arcana"><svg class="icon-major-arcana"></svg><span>Major Arcana</span></button>
+                <button class="suit-button" data-suit="Wands"><svg class="icon-fire"></svg><span>Wands</span></button>
+                <button class="suit-button" data-suit="Cups"><svg class="icon-water"></svg><span>Cups</span></button>
+                <button class="suit-button" data-suit="Swords"><svg class="icon-air"></svg><span>Swords</span></button>
+                <button class="suit-button" data-suit="Pentacles"><svg class="icon-earth"></svg><span>Pentacles</span></button>
+              </div>
+              <div class="card-list"></div>
+            </div>
+          </div>
         </div>
         <div class="slot-filled">
-          <div class="spread-card flexbox-columns">
+          <div class="spread-card flexbox-columns tarot-card">
             <img class="card-image">
-            <h3 class="card-name"></h3>
+            <div class="card-name-row">
+              <h2 class="card-name"></h2>
+            </div>
             <div><i class="orientation"></i></div>
+            <div class="spread-elements"></div>
             <div class="spread-keywords"></div>
             <div class="spread-description"></div>
           </div>
@@ -29,22 +57,6 @@
       </div>
     </template>
 
-    <div class="card-picker-overlay" style="display: none;">
-      <div class="card-picker">
-        <h3>Select a card</h3>
-        <select class="card-picker-select">
-          <option value="">-- Choose a card --</option>
-        </select>
-        <div class="card-picker-orientation">
-          <label><input type="radio" name="orientation" value="upright" checked>Upright</label>
-          <label><input type="radio" name="orientation" value="reversed">Reversed</label>
-        </div>
-        <div class="card-picker-buttons">
-          <button class="card-picker-confirm">Confirm</button>
-          <button class="card-picker-cancel">Cancel</button>
-        </div>
-      </div>
-    </div>
   </div>
 </body>
 

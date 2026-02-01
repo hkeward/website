@@ -1,0 +1,407 @@
+/* Tarot spread pages */
+.spread-page {
+    overflow-y: scroll;
+}
+
+.spread-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.spread-header h1 {
+    order: 2;
+    flex: 1;
+    text-align: center;
+    margin: 0.2em;
+}
+
+.spread-header a {
+    margin: 1.34em 0;
+}
+
+.spread-header a:has(.reset-spread-button) {
+    order: 3;
+}
+
+@media (max-width: 312px) {
+    .spread-header h1 {
+        order: 3;
+    }
+
+    .spread-header a:has(.reset-spread-button) {
+        order: 2;
+    }
+}
+
+.spread-container {
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.spread-card-slot {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 150px;
+}
+
+.card-action-button {
+    width: 100%;
+    max-width: 250px;
+    aspect-ratio: 25/44;
+    margin-bottom: 1em;
+    border-radius: 15px;
+    border: 3px double rgb(75, 89, 193);
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+.card-action-default {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.card-action-search {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+    justify-content: flex-start;
+}
+
+.search-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.search-back-button,
+.search-draw-button {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.search-back-button svg,
+.search-draw-button svg {
+    width: 20px;
+    height: 20px;
+}
+
+.search-back-button:hover,
+.search-draw-button:hover {
+    background: rgb(2, 2, 39);
+}
+
+.icon-back:hover path {
+    fill: rgb(104, 116, 204);
+}
+
+.suit-list {
+    display: flex;
+    flex-direction: column;
+    transition: flex 0.3s ease, padding 0.3s ease, gap 0.3s ease;
+}
+
+.suit-list.collapsed {
+    flex: 0 0 auto;
+    height: auto;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+    justify-content: flex-start;
+    gap: 0;
+}
+
+.suit-list:not(.collapsed) {
+    flex: 1;
+    justify-content: space-around;
+    padding: 10px 0;
+    gap: 5px;
+}
+
+.card-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+    flex: 0;
+    padding-top: 0;
+    transition: flex 0.3s ease, padding 0.3s ease;
+}
+
+.card-list.expanded {
+    flex: 1 1 auto;
+    padding-top: 5px;
+    align-self: stretch;
+    overflow-y: auto;
+}
+
+.card-list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 15px;
+    cursor: pointer;
+    font-size: 0.85em;
+}
+
+.card-list-item:hover {
+    background: rgb(2, 2, 39);
+}
+
+.card-list-item.placed {
+    opacity: 0.5;
+}
+
+.card-list-item.highlighted {
+    background: rgb(2, 2, 39);
+}
+
+.card-list-item .card-list-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1;
+}
+
+.card-list-item .reverse-toggle {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    margin-left: 8px;
+    padding: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: opacity 0.2s ease, background 0.2s ease;
+}
+
+.card-list-item .reverse-toggle:hover {
+    opacity: 1;
+    fill: rgb(57, 20, 116);
+    background: rgb(250, 197, 52);
+}
+
+.draw-card-button {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.search-card-button {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.search-card-button svg {
+    width: 20%;
+    height: auto;
+}
+
+.draw-card-button:hover,
+.search-card-button:hover {
+    background: rgb(2, 2, 39);
+}
+
+.suit-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    border: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    padding: 5px 15px;
+    width: 100%;
+    flex: 1;
+    overflow: hidden;
+    max-height: 50px;
+    transition: flex 0.3s ease, opacity 0.3s ease, padding 0.3s ease, max-height 0.3s ease;
+}
+
+.suit-button.hidden {
+    flex: 0 0 0;
+    max-height: 0;
+    padding: 0;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.suit-button:hover {
+    background: rgb(2, 2, 39);
+}
+
+.suit-button.active {
+    background: rgb(40, 40, 100);
+    flex: 0 0 auto;
+}
+
+.suit-button svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.suit-button span {
+    font-size: 0.9em;
+    white-space: nowrap;
+}
+
+.draw-card-button svg {
+    width: 30%;
+    height: 30%;
+}
+
+.draw-card-button:hover svg,
+.search-card-button:hover svg,
+.search-draw-button:hover svg {
+    animation: twinkle 3s linear infinite;
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotate(360deg);
+    }
+}
+
+.spread-card-slot .card-image {
+    width: 100%;
+    max-width: 250px;
+    aspect-ratio: 25/44;
+    object-fit: cover;
+    border-radius: 15px;
+    align-self: center;
+}
+
+.card-image.drawing {
+    animation: card-draw 0.5s ease-out;
+}
+
+.card-image.drawing.card-reversed {
+    animation: card-draw-reversed 0.5s ease-out;
+}
+
+@keyframes card-draw {
+    from {
+        transform: scale(3) rotate(30deg);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes card-draw-reversed {
+    from {
+        transform: scale(3) rotate(210deg);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1) rotate(180deg);
+        opacity: 1;
+    }
+}
+
+.card-image.resetting {
+    animation: card-reset 0.5s ease-in forwards;
+}
+
+.card-image.resetting.card-reversed {
+    animation: card-reset-reversed 0.5s ease-in forwards;
+}
+
+@keyframes card-reset {
+    from {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(3) rotate(-30deg);
+        opacity: 0;
+    }
+}
+
+@keyframes card-reset-reversed {
+    from {
+        transform: scale(1) rotate(180deg);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(3) rotate(150deg);
+        opacity: 0;
+    }
+}
+
+.slot-label {
+    text-align: center;
+}
+
+.spread-elements {
+    display: flex;
+    justify-content: flex-start;
+    gap: 5px;
+}
+
+.card-name-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 4px 10px;
+    box-sizing: border-box;
+    transition: background 0.2s ease;
+    background: rgb(75, 89, 193);
+    border-radius: 15px;
+}
+
+.card-name-row .card-name {
+    margin: 0;
+    flex: 1;
+    text-align: center;
+}
+
+.card-name-row .edit-card-btn {
+    width: 18px;
+    height: 18px;
+    opacity: 0;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    flex-shrink: 0;
+    stroke: black;
+}
+
+.card-name-row:hover .edit-card-btn {
+    opacity: 0.5;
+}
+
+.card-name-row .edit-card-btn:hover {
+    opacity: 1;
+}
