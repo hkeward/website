@@ -21,7 +21,7 @@ const clickableArea = {
 };
 
 function onPlayerReady() {
-  document.addEventListener('click', (event) => {
+  function handleClick(event) {
     const clickX = event.pageX;
     const clickY = event.pageY;
 
@@ -32,7 +32,7 @@ function onPlayerReady() {
       clickY >= clickableArea.y1 &&
       clickY <= clickableArea.y2
     ) {
-
+      document.removeEventListener('click', handleClick);
       player.playVideo();
       setTimeout(function () {
         document.body.style.backgroundImage = 'url("/assets/images/grid.sun.png")';
@@ -48,6 +48,7 @@ function onPlayerReady() {
           document.body.appendChild(inLeft);
         }, 35500);
       }, 10000);
-    };
-  });
-};
+    }
+  }
+  document.addEventListener('click', handleClick);
+}
