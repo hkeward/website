@@ -49,5 +49,5 @@ function onPlayerReady() {
         }, 35500);
       }, 10000);
     };
-  }, { once: true });
+  });
 };
