@@ -1,4 +1,4 @@
-// Tarot spread functionality
+// targets three-card.html
 
 let tarotData = null;
 const drawnCards = new Set();
